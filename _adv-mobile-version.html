@@ -1,0 +1,204 @@
+<div class="d-hide">
+      {$template:_header-mobile}
+        <!-- Header -->
+            {$template:_header}
+    <div class="wrapone d-hide">
+    <div class="inner-search-box d-hide">
+                <div class="container">
+                    <div class="grid_3 t-hide m-hide">{$header:search-company:static}</div>
+                    {$template:_jsearchforms}   
+                </div>        
+             </div>
+        <div id="container" class="container">
+            <div class="grid_12 nav_all t-hide m-hide">
+                {$plugin:joblist:navigation}
+            </div>
+            <div class="container mb20px">
+                <div class="grid_12 text-center banners">
+                {device:mobile}{$content:banner:static}{/device}
+                {device:tablet}{$content:banner:static}{/device}
+                </div>
+            </div>
+
+            <!-- Content box -->
+            <div id="content" class="grid_9 left-column d-hide"> 
+                <h1 class="grid_12 ads_name">
+                <span  class="grid_12 alpha">{$adv:name}</span>
+                    {$adv:hideemail}
+                {$adv:hidetelephone}
+                </h1>  
+                <div class="block_adv1">
+                    <span class="grid_3 block category-option">{$adv:categories}</span>
+                    {device:mobile, tablet}
+                    <span class="data_ads t-grid_12">{$header:post:static} {$adv:updatedat:readonly}</span>
+                    {/device}
+                    <div class="grid_4 link_addto_fav t-hide m-hide">
+                        {$plugin:joblist:wishlist:link}
+                    </div>
+                </div>
+                  
+                <!-- PAGER FOR SLIDER -->
+                <div id="pager" class="cycle-pager"></div>
+        
+                {subscription:adv:free}
+                {device:mobile, tablet}
+                <div class="m-box">
+                    <div class="m-title">
+                        <div class="adv-data">
+                            <!--span>{$ adv:updatedat:readonly}</span-->    
+                        </div>
+                        <h1>
+                            {$adv:name}
+                        </h1>
+
+                    </div>
+                </div>
+                {/device}
+                
+                {device:mobile, tablet}
+                <div class="grid_12 d-hide containerlSSlideOuter">
+                <ul id="lightSlider" class="lightSlider" >
+                        <li>{$directupload:{$adv:id}:logo:300::medium:nolink}</li>
+                        <li>{$directupload:{$adv:id}:gal-1:300:nolink}</li>
+                        <li>{$directupload:{$adv:id}:gal-2:300:nolink}</li>
+                        <li>{$directupload:{$adv:id}:gal-3:300:nolink}</li>
+                        <li>{$directupload:{$adv:id}:gal-4:300:nolink}</li>
+                        <li>{$directupload:{$adv:id}:gal-5:300:nolink}</li>
+                    </ul>
+              </div>
+                <div class="aside-box border price-box ads grid_6 t-grid_8 m-grid_6">
+                      <!--  <span class="t-grid_6 m-grid_4 ">{$ header:title-left0:static}</span>-->
+                        <span class="price adv-price ">{$adv:price}</span>
+                        <span class="currency adv-price ">{$adv:currency}</span>
+                </div>
+                <div>
+                    <span class="clearfix"></span>
+                    <div class="grid_12">
+                       {$adv:map}
+                    </div>
+                    <div class="icon-user business_adv grid_12 t-grid_6 m-grid_4 text-center">
+                            {$adv:business}
+                    </div>
+                    <div class="grid_12">
+                        <span class="block contact-info t-grid_3 m-grid_3 t-btn_block">
+                   <!-- <i class="icon-mail4 icon16"></i> -->
+                    {$adv:email}
+                </span>
+                    
+                    <span class="block contact-info t-grid_3 m-grid_3 t-btn_block">
+                   <!-- <i class="icon-phone3 icon16"></i>-->
+                    {$adv:telephone}
+                </span>  
+                    <div class="t-grid_3 m-grid_3 t-btn_block">
+                        <a href="#contact-form" id="bt-contact-form" class="btn mb15px blue-btn">{$header:btn-left2:static}</a>
+                    </div>  
+                    </div>
+                   <!--<div class="contact-info aside-box t-grid_3 m-grid_5"><a href="#contact-form" id="btn-contact-form" class="btn mb15px blue-btn">{$ header:btn-left:static}</a></div>-->
+                    <div class="aside-box total grid_7">
+                    <h3>{$header:right2:static}</h3>
+                    {$content:right2:static}
+                    </div>
+                </div>
+                {/device}
+                {/subscription}
+                <div class="grid_12">
+                    <h3 class="site_h">Product description:</h3>
+                    <p class="texts">{$adv:description}</p>
+                </div>
+                
+                {$content:content11}
+                {$content:content12}
+                <h2>{$header:content2}</h2>
+                {$content:content21}
+                {$content:content22}
+                {device:mobile, tablet}
+               <div class="grid_8">
+                    <a href="#report-form" id="btn-report-form" class="mb15px red icon-flag">{$header:btn-report:static}</a>
+                </div>
+                <div class="t-grid_3 m-grid_4">
+                    <div class="form-box">
+                        <h3 id="report-form"></h3>
+                        {$plugin:joblist:report}
+                    </div>
+                </div>
+                {/device}
+                <div class="grid_12 form-box">
+                        <h3 id="contact-form">Contact suplier</h3>
+                        {$plugin:joblist:Apply:adv}
+                </div>
+        </div>
+            
+            <!-- Right box -->
+            <aside id="right" class="grid_3 t-hide m-hide">
+                <div class="">
+                    <div class="aside-box border price-box t-grid_3 m-grid_2">
+                        <!--<span class="t-grid_6 m-grid_4">{$header:title-left0:static}</span>-->
+                        <div class="grid_12 prise_small-box">
+                            <span class="price adv-price">{$adv:price}</span>
+                            <span class="currency adv-price">{$adv:currency}</span>
+                        </div>
+                        <span class="data_ads">{$header:post:static} {$adv:updatedat:readonly}</span> 
+                    </div>
+                </div>
+                
+                
+                <div class="grid_12">
+                    <div>
+                       {$adv:map}
+                    </div>
+                    <div class="icon-user business_adv grid_12 t-grid_6 m-grid_4 ">
+                            {$adv:business}
+                    </div>
+                        <span class="block contact-info t-grid_3 m-grid_2">
+                            <!-- <i class="icon-mail4 icon16"></i> -->
+                            {$adv:email}
+                        </span>
+                    <div class="contact-info aside-box t-grid_3 m-grid_2"> 
+                        <!--<i class="icon-phone3 icon16"></i>--> 
+                        <span class="title">{$header:title-left1:static}</span>
+                        {$adv:telephone}
+                    </div> 
+                    <div class="t-grid_3 m-grid_4">
+                        <a href="#contact-form" id="bt-contact-form" class="btn mb15px blue-btn">{$header:btn-left2:static}</a>
+                    </div>  
+                </div>
+               
+                <div class="aside-box">
+                    
+                    {$content:right2:static}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:right3}</h3>
+                    {$content:right3}
+                    <div class="t-grid_3 m-grid_4">
+                         <div class="form-box"><h3 id="report-form"></h3>
+                              {$plugin:joblist:report}
+                          </div>
+                        </div>
+                </div>
+                <div class="t-hide m-hide aside-box">
+                    <h3>{$header:right3:static}</h3>
+                    {$content:right3:static}
+                </div>
+            </aside>
+            <div id="content" class="grid_12 related_ads">
+                <div class="grid_12">
+                  <h4>{$header:related-adv:static}
+                        {$plugin:joblist:related:adv:150}
+                  </h4>
+                  <span class="business m-grid_3">
+                        <a href="http://new.umahadex.com/classified-ads.html">All Related</a>
+                  </span>
+                </div>
+                
+            </div>
+            
+            <div class="grid_12 banners text-center">
+                <!--{$ imageonly:banner3:940:static}-->
+                {device:mobile}{$content:banner:static}{/device}
+                {device:tablet}{$content:banner:static}{/device}
+            </div>
+        </div>
+        
+    </div>
+      </div>

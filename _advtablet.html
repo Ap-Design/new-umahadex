@@ -1,0 +1,210 @@
+<!-- Container -->
+        <div class="wrapone d-hide">
+        <div class="inner-search-box">
+                <div class="container">
+                    <div class="grid_3 t-hide m-hide">{$header:search-company:static}</div>
+                    {$template:_jsearchforms}   
+                </div>        
+            </div>
+        <div id="container" class="container">
+            <div class="grid_12 nav_all t-hide m-hide">
+                {$plugin:joblist:navigation}
+            </div>
+            <div class="grid_12 banners text-center">
+                <!--{$ imageonly:banner3:940:static}-->
+                {device:desktop}{$content:banner:static}{/device}
+                {device:mobile}{$content:banner-mob:static}{/device}
+                {device:tablet}{$content:banner-mob:static}{/device}
+            </div>
+            {device:desktop}
+            <span>{$adv:previewlink}</span>
+            
+            {/device}
+            <!-- Content box -->
+            <div id="content" class="grid_9 left-column"> 
+                <h1 class="grid_12">
+                    <span  class="grid_12 alpha">{$adv:name}</span>
+                    <span class="grid_3 block category-option">{$adv:categories}</span>
+                    <div class="grid_4 link_addto_fav t-hide m-hide">
+                        {$plugin:joblist:wishlist:link}
+                    </div>
+                    {$adv:hideemail}
+                {$adv:hidetelephone}
+                </h1>   
+                  
+                {subscription:adv:free}
+                {device:mobile, tablet}
+                <div class="m-box">
+                    <div class="m-title">
+                        <div class="adv-data">
+                            <!--span>{$ adv:updatedat:readonly}</span-->    
+                        </div>
+                        <h1>
+                            {$adv:name}
+                        </h1>
+                        
+                    </div>
+                    <div class="grid_8">
+                        {$directupload:{$adv:id}:logo:300::medium:nolink}
+                        {$directupload:{$adv:id}:gal-1:300:nolink}
+                        {$directupload:{$adv:id}:gal-2:300:nolink}
+                        {$directupload:{$adv:id}:gal-3:300:nolink}
+                        {$directupload:{$adv:id}:gal-4:300:nolink}
+                        {$directupload:{$adv:id}:gal-5:300:nolink}
+                    </div>
+                    <ul id="carousel-mobile" class="carousel" 
+                        data-scrolling="false"
+                        data-visible="1"
+                        >
+                        
+                        <li>{$directupload:{$adv:id}:logo:300::medium:nolink}</li>
+                        <li>{$directupload:{$adv:id}:gal-1:300:nolink}</li>
+                        <li>{$directupload:{$adv:id}:gal-2:300:nolink}</li>
+                        <li>{$directupload:{$adv:id}:gal-3:300:nolink}</li>
+                        <li>{$directupload:{$adv:id}:gal-4:300:nolink}</li>
+                        <li>{$directupload:{$adv:id}:gal-5:300:nolink}</li>
+                    </ul>
+                </div>
+                {/device}
+                {device:desktop}
+                <div class="grid_10 t-hide m-hide">
+                    {$directupload:{$adv:id}:logo:570::medium:placeholder}
+                    
+                </div>
+                <div class="grid_2 t-hide m-hide">
+                    {$directupload:{$adv:id}:gal-1:100}
+                    {$directupload:{$adv:id}:gal-2:100}
+                    {$directupload:{$adv:id}:gal-3:100}
+                    {$directupload:{$adv:id}:gal-4:100}
+                    {$directupload:{$adv:id}:gal-5:100}
+                </div>
+                {/device}
+              
+                <span class="clearfix"></span>
+                <div class="business  t-grid_6 m-grid_4 d-hide">
+                    {$adv:business}
+                </div>
+                <div>
+                        {$adv:map}
+                    </div>
+                    <div class="small_block3">
+                        <div><span class="icon-user"></span><span class="grid_5 loginprof">{$user:name}</span></div>
+                       
+                <div>
+                    <h3 class="site_h">Description: </h3>
+                    <p class="texts">{$adv:description}</p> 
+                    
+                    <div class="form-box">
+                        <h3 id="contact-form ">Contact suplier</h3>
+                        {$plugin:joblist:Apply:adv}
+                    </div>
+                    <div class="grid_4 business m-hide t-hide">
+                        {$adv:business}
+                    </div>
+                    <!-- -->
+                </div>
+                {/subscription}
+                {$content:content11}
+                {$content:content12}
+                <h2>{$header:content2}</h2>
+                {$content:content21}
+                {$content:content22}
+            </div>
+
+            <!-- Right box -->
+            <aside id="right" class="grid_3 t-hide m-hide">
+            <div class="">
+                    <div class="aside-box border price-box t-grid_3 m-grid_2">
+                        <span class="t-grid_6 m-grid_4">{$header:title-left0:static}</span>
+                        <span class="price adv-price">{$adv:price}</span>
+                        <span class="currency adv-price">{$adv:currency}</span>
+                    </div>
+                    <div>
+                        {$adv:map}
+                    </div>
+                    <div class="small_block3">
+                        <div><span class="icon-user"></span><span class="grid_5 loginprof">{$user:name}</span></div>
+                        <div class="grid_5 business m-hide t-hide">
+                   <a href="http://new.umahadex.com/classified-ads.html">All Related</a>
+                  </div>
+                    </div>
+                        <span class="block contact-info t-grid_3 m-grid_2">
+                            <!-- <i class="icon-mail4 icon16"></i> -->
+                            {$adv:email}
+                        </span>
+                    <div class="contact-info aside-box t-grid_3 m-grid_2"> 
+                        <!--<i class="icon-phone3 icon16"></i>--> 
+                        <span class="title">{$header:title-left1:static}</span>
+                        {$adv:telephone} 
+                        
+                    </div> 
+                    <a href="#contact-form" id="btn-contact-form" class="btn mb15px blue-btn">{$header:btn-left:static}</a>
+                    <!--<address class="font-SlabTallX company-address aside-box t-grid_3 m-grid_2">
+                        <i class="icon-office icon16"></i>  
+                        <span class="title">{$header:title-left2:static}</span>
+                        {$adv:city}
+                    </address>-->
+                    <!--<div class="contact-info aside-box t-grid_3 m-grid_2"> 
+                        <i class="icon-skype icon16"></i> 
+                        <span class="title">{$header:title-left3:static}</span>
+                        {$adv:skype} 
+                        Negotiable: {$adv:negotiable}
+                  
+                    </div>-->
+                    <div class="aside-box t-grid_3 m-grid_2"> 
+                        
+                    </div>
+                </div>
+                {memberonly}
+                <!--<div class="aside-box">
+                    <h3>{$header:right1:static}</h3>  
+                    <div id="payment-block">
+                        <span class="h3">{$header:PaypalButton1:static}</span> 
+                        {$plugin:payjob:PaypalButton:adv:premium}
+                    </div>
+                    <div id="payment-block">
+                        <span class="h3">{$header:PaypalButton2:static}</span> 
+                        {$plugin:payjob:PaypalButton:adv:golden}
+                    </div>
+                    <div id="payment-block">
+                        <span class="h3">{$header:PaypalButton3:static}</span> 
+                        {$plugin:payjob:PaypalButton:adv:all}
+                    </div>
+                </div>-->
+                {/memberonly}
+                <div class="aside-box">
+                    <h3>{$header:right2:static}</h3>
+                    {$content:right2:static}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:sidebar_menu:static}</h3>
+                    {$content:sidebar_menu:static}
+                </div>
+                <div class="t-grid_3 m-grid_4">
+                         <div class="form-box"><h3 id="report-form"></h3>
+                              {$plugin:joblist:report}
+                         </div>
+                    </div>
+                <div class="aside-box">
+                    <h3>{$header:right3:static}</h3>
+                    {$content:right3:static}
+                </div>
+            </aside>
+            <div class="grid_12">
+                <div class="grid_12">
+                  <h4 class="grid_10">{$header:related-adv:static}</h4>
+                  <div class="grid_2 business m-hide t-hide">
+                   <a href="http://new.umahadex.com/classified-ads.html">All Related</a>
+                  </div>
+                </div>
+                {$plugin:joblist:related:adv:150}
+            </div>
+                <div class="grid_12 banners text-center mb20px">
+                <!--{$ imageonly:banner3:940:static}-->
+                {device:desktop}{$content:banner:static}{/device}
+                {device:mobile}{$content:banner-mob:static}{/device}
+                {device:tablet}{$content:banner-mob:static}{/device}
+            </div>
+            
+        </div>
+        </div>

@@ -1,0 +1,115 @@
+.carousel{
+    position  : relative;
+    max-width : 100%;
+    .user-select();
+    overflow: hidden;
+
+    .carousel-clip{
+        overflow : hidden;
+        height   : 100%;
+    }
+
+    .carousel-wrap{
+        .inline-block-wrap(top, ~'.carousel-item');
+        min-width : 100%;
+    }
+
+    &:hover{
+        .carousel-btn{
+            display : block;
+        }
+    }
+
+    /*.carousel-btn{
+        .rgba(#fff, 0.75);
+        position  : absolute;
+        top       : 0;
+        bottom    : 0;
+        margin    : auto;
+        width     : 3em;
+        display   : none;
+        font-size : @font-size-base;
+
+        &:before{
+            font-family : 'toaster-icons';
+            position    : absolute;
+            left        : 0;
+            top         : 0;
+            bottom      : 0;
+            margin      : auto;
+            .icon-size(3em);
+        }
+
+        &.prev{
+            left : 0;
+
+            &:before{
+                content : "\e0c5";
+            }
+        }
+        &.next{
+            right : 0;
+
+            &:before{
+                content : "\e0c6";
+            }
+        }
+    }*/
+    .carousel-btn{
+        background : @primary-bg;
+        color      : @primary-color;
+        position   : absolute;
+        top        : 50%;
+        z-index    : 20;
+        cursor     : pointer;
+        margin-top : -@slider-button-size / 2 - @padding-large-vertical;
+        padding    : @padding-large-vertical;
+        .box-sizing(content-box);
+        .icon-size(@slider-button-size);
+        .transition();
+
+        &:hover{
+            background : darken(@primary-bg, 10%);
+            color      : @primary-color;
+        }
+        &:before{
+            font-family : 'toaster-icons';
+            position    : absolute;
+            left        : 0;
+            right       : 0;
+            top         : 0;
+            bottom      : 0;
+            margin      : auto;
+            .icon-size(@slider-button-size);
+            font-size   : 18px;
+        }
+
+        &.prev{
+            left : -@slider-button-size * 3;
+            &:before{
+                content : "\e0c5";
+            }
+        }
+
+        &.next{
+            right : -@slider-button-size * 3;
+            &:before{
+                content : "\e0c6";
+            }
+        }
+    }
+
+    &:hover .carousel-btn{
+        &.prev{
+            left : 10px;
+        }
+
+        &.next{
+            right : 10px;
+        }
+
+    }
+}
+#carousel-mobile{
+    padding: 0;
+}

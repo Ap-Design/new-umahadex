@@ -1,0 +1,224 @@
+<div class="d-hide">
+    <body class="{$mobile:device}">
+
+     {$template:_header-mobile}
+        <!-- Header -->
+            {$template:_header}
+            
+            <div class="wrapone">
+             <div class="inner-search-box d-hide">
+                <div class="container">
+                    <div class="grid_3 t-hide m-hide">{$header:search-company:static}</div>
+                    {$template:_jsearchforms}   
+                </div>        
+             </div>
+            <!-- -->
+        <!-- Container -->
+        <div id="container" class="container"> 
+            {subscription:company:free}
+            <div class="grid_12 nav_all t-hide m-hide">
+                {$plugin:joblist:navigation}
+            </div>
+            <div class="d-hide t-hide m-hide">{subscription:company:free}</div>
+            <div class="grid_12 banners text-center mb20px">
+                <!--{$ imageonly:banner3:940:static}-->
+                {device:desktop}{$content:banner:static}{/device}
+                {device:mobile}{$content:banner:static}{/device}
+                {device:tablet}{$content:banner:static}{/device}
+            </div>
+            
+            
+            
+            <!-- Content box -->
+            <div id="content" class="grid_9 left-column"> 
+            <h1 class="grid_12 company_smallblock">
+             {device:mobile, tablet}
+            <div class="text-center">{$directupload:{$company:id}:logo:220:placeholder}</div>
+             {/device}
+                <span class="comp_name">{$company:name}</span>
+                <span class="share-button t-hide d-hide">
+                    <a href="#share" class="drop-share" onclick="yaCounter31176761.reachGoal('ORDERCAT1'); return true;"><i class="fa fa-share-alt" aria-hidden="true"></i>Share</a>
+                </span>
+                <script type="text/javascript">(function() {
+                if (window.pluso)if (typeof window.pluso.start == "function") return;
+                if (window.ifpluso==undefined) { window.ifpluso = 1;
+                var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+                s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+                var h=d[g]('body')[0];
+                h.appendChild(s);
+                }})();</script>
+                <div class="pluso" data-background="transparent" data-options="big,round,line,horizontal,counter,theme=02" data-services                          ="vkontakte,facebook,twitter"></div>
+                 <span class="block category-option">{$company:categories:readonly}</span>
+            </h1>
+            {device:mobile, tablet}
+            <div class="info grid_12 d-hide">
+                <!-- <div>{$ company:map}</div>-->
+                 <span class="data_company">{$header:post:static} {$company:updatedat:readonly}</span>
+                 <span class="block contact-info mb20px t-grid_5 m-grid_4"> 
+                   <div class="spoiler-title"><i class="icon-screen icon16"></i> <span>Visit website</span></div>           
+                   <div class="spoiler-body">{$company:site}</div>
+                </span>  
+                </div>
+                {/device}
+                {device:mobile, tablet}
+                <div class="grid_12 t-grid_12 d-hide">
+                <span class="block contact-info t-grid_3 m-grid_3 t-btn_block">
+                   <!-- <i class="icon-phone3 icon16"></i>-->
+                    {$company:telephone}
+                </span>   
+                <span class="block contact-info t-grid_3 m-grid_3 t-btn_block">
+                   <!-- <i class="icon-mail4 icon16"></i> -->
+                    {$company:email}
+                </span>
+                <div class="t-grid_3 m-grid_3 t-btn_block">
+                    <a href="#contact-form" id="btn-contact-form" class="btn mb15px blue-btn t-grid_3 m-grid_2">{$header:btn-left3:static}</a>
+                </div>
+                <div class="aside-box total grid_7">
+                    <h3>{$header:right2:static}</h3>
+                    {$content:right2:static}
+                </div>
+                </div>
+            {/device}
+                    {$company:hideemail}
+                    {$company:hidetelephone}                     
+                    <!--p><span>Link:</span> {$company:link}</p-->
+                    <h3 class="site_h">Company description: </h3>
+                    <p class="texts">{$company:description}</p>  
+                    {device:mobile, tablet}
+                    <div class="t-grid_12 m-grid_12 d-hide">
+                        <a href="#report-form" id="btn-report-form" class="mb15px icon-flag red">{$header:btn-report:static}</a>                          <div class="form-box"><h3 id="report-form"></h3>
+                            {$plugin:joblist:report}
+                        </div>
+                    </div>
+                    {/device}
+                    <div class="form-box">
+                        <h3 id="contact-form">Contact now</h3>
+                        {$plugin:joblist:Apply:company}
+                    </div>
+                     <div class="company-reviews">
+                     <span>Reviews</span>
+                     {$plugin:pagerating:review:moderated:nocaptcha}</div>
+                     <div class="t-grid_12 buttonleave-review"><a href="#leave-review" class="drop-comment" onclick="yaCounter31176761.reachGoal('ORDERCAT1'); return true;">Leave Review</a></div>
+           
+            </div>
+            
+    
+                    
+            <!-- Right box -->
+            <aside id="right" class="grid_3 t-hide m-hide">
+             
+                
+            <aside id="right" class="panel">
+                 
+                <span class="clearfix d-hide"></span>
+                <div class="info">
+                 <!--<div>{$ company:map}</div>-->
+                 <span class="block contact-info mb20px t-grid_3 m-grid_4"> 
+                   <span class="data_company">{$header:post:static} {$company:updatedat:readonly}</span>
+                   <div class="spoiler-title"><i class="icon-screen icon16"></i> <span>Visit website</span></div>           
+                   <div class="spoiler-body">{$company:site}</div>
+                </span>  
+                </div>
+                <span class="block contact-info t-grid_3 m-grid_2">
+                    <!--<i class="icon-mail4 icon16"></i>-->
+                    {$company:email}
+                </span>
+                <span class="block contact-info t-grid_3 m-grid_2">
+                    <!--<i class="icon-phone3 icon16"></i>-->
+                    {$company:telephone}
+                </span>
+                {$company:previewlink}
+                <div class="t-grid_3 m-grid_4">
+                    <a href="#contact-form" id="btn-contact-form" class="btn mb15px blue-btn">{$header:btn-left2:static}</a>
+                </div>    
+                
+                <!--span class="block contact-info">
+                    <i class="icon-printer2 icon16"></i>
+                    {$ company:fax}
+                </span-->
+                
+                <!--<div class="aside-box t-grid_3 m-grid_2"> 
+                    <span class="h3 title">{$header:job0:static}</span>
+                    <span class="block category-option">{$company:categories:readonly}</span>
+                </div>-->
+                <address class="aside-box company-address t-grid_3 m-grid_2">
+                    <span class="h3 block">{$header:company1:static}</span>
+                    {adminonly}
+                        <p><span>Country:</span>{$company:country}</p> 
+                        <span>Address:</span>
+                    {/adminonly}
+                    {$company:address},
+                    {$company:city},                   
+                    {$company:region}  
+                </address>
+                <div class="aside-box t-grid_6 m-grid_4">
+                    <div>
+                        <span>{$header:Monday:static}</span>
+                        <span>{$company:Schedule:Monday}</span>
+                    </div>
+                    <div>
+                        <span>{$header:Tuesday:static}</span>
+                        <span>{$company:Schedule:Tuesday}</span>
+                    </div>
+                    
+                </div>
+                <!--div>
+                    <span>{$header:Wednesday:static}</span>
+                    <span>{$company:Schedule:Wednesday}</span>
+                </div>
+                <div>
+                    <span>{$header:Thursday:static}</span>
+                    <span>{$company:Schedule:Thursday}</span>
+                </div>
+                <div>
+                    <span>{$header:Friday:static}</span>
+                    <span>{$company:Schedule:Friday}</span>
+                </div>
+                <div>
+                    <span>{$header:Saturday:static}</span>
+                    <span>{$company:Schedule:Saturday}</span>
+                </div>
+                <div>
+                    <span>{$header:Sunday:static}</span>
+                    <span>{$company:Schedule:Sunday}</span>
+                </div-->  
+                
+            </aside>
+                {/subscription}
+                <div class="aside-box">
+                
+                    <h3>{$header:right2:static}</h3>
+                    
+                    {$content:right2:static}
+                    <div class="t-grid_3 m-grid_4">
+                         <div class="form-box"><h3 id="report-form"></h3>
+                              {$plugin:joblist:report}
+                          </div>
+                        </div>
+                    
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:right3}</h3>
+                    {$content:right3}
+                </div>
+                <aside id="grid_12 right" class="panel">
+                <div class="aside-box grid_12 t-hide m-hide">
+                 {$content:right3:static}
+                   
+                </div>
+            </aside>
+            </aside>
+            <div id="content" class="grid_12 rel-job">
+                <h4>{$header:related-company:static}</h4>
+                 {$plugin:joblist:related:company:150}
+            </div>
+            <div class="grid_12 banners text-center mb20px">
+                <!--{$ imageonly:banner3:940:static}-->
+                {device:desktop}{$content:banner:static}{/device}
+                {device:mobile}{$content:banner:static}{/device}
+                {device:tablet}{$content:banner:static}{/device}
+            </div>
+        </div>
+    </div>
+</div>

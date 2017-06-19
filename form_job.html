@@ -1,0 +1,515 @@
+<form id="job-list-job-registration-form" class="hiddenJob" enctype="application/x-www-form-urlencoded" action="http://new.umahadex.com/plugin/joblist/run/freeJobRegistration/" method="post">
+    <div class="grid_12">
+        <label for="jobBusinessType" class="required">Business Type :</label>
+        
+<label for="jobBusinessType-private"><input type="radio" name="jobBusinessType" id="jobBusinessType-private" value="private" checked="checked" class="processed radio-upgrade filed-upgrade"><span class="checkbox_radio "></span>private</label><br><label for="jobBusinessType-company"><input type="radio" name="jobBusinessType" id="jobBusinessType-company" value="company" class="processed radio-upgrade filed-upgrade"><span class="checkbox_radio "></span>company</label>                <span class="error-registr-adv" style="display:none;">Required fields are missing! Please fill all fields marked with *</span>
+    </div>
+    <div class="grid_12">
+        <label for="jobCompanyName" class="required">Title :</label>
+        
+<input type="text" name="jobCompanyName" id="jobCompanyName" value="" class="required">                <span class="error-registr-job" style="display:none;">Required fields are missing! Please fill all fields marked with *</span>
+    </div>
+    <div class="grid_6">
+        <label for="jobCountry" class="required">Country :</label>
+        
+<select name="jobCountry" id="jobCountry">
+    <option value="AU">Австралия</option>
+    <option value="AT">Австрия</option>
+    <option value="AZ">Азербайджан</option>
+    <option value="AX">Аландские о-ва</option>
+    <option value="AL">Албания</option>
+    <option value="DZ">Алжир</option>
+    <option value="AS">Американское Самоа</option>
+    <option value="AI">Ангилья</option>
+    <option value="AO">Ангола</option>
+    <option value="AD">Андорра</option>
+    <option value="AQ">Антарктида</option>
+    <option value="AG">Антигуа и Барбуда</option>
+    <option value="AR">Аргентина</option>
+    <option value="AM">Армения</option>
+    <option value="AW">Аруба</option>
+    <option value="AF">Афганистан</option>
+    <option value="BS">Багамские о-ва</option>
+    <option value="BD">Бангладеш</option>
+    <option value="BB">Барбадос</option>
+    <option value="BH">Бахрейн</option>
+    <option value="BY">Беларусь</option>
+    <option value="BZ">Белиз</option>
+    <option value="BE">Бельгия</option>
+    <option value="BJ">Бенин</option>
+    <option value="BM">Бермудские о-ва</option>
+    <option value="BG">Болгария</option>
+    <option value="BO">Боливия</option>
+    <option value="BQ">Бонэйр, Синт-Эстатиус и Саба</option>
+    <option value="BA">Босния и Герцеговина</option>
+    <option value="BW">Ботсвана</option>
+    <option value="BR">Бразилия</option>
+    <option value="IO">Британская территория в Индийском океане</option>
+    <option value="BN">Бруней-Даруссалам</option>
+    <option value="BF">Буркина-Фасо</option>
+    <option value="BI">Бурунди</option>
+    <option value="BT">Бутан</option>
+    <option value="VU">Вануату</option>
+    <option value="VA">Ватикан</option>
+    <option value="GB">Великобритания</option>
+    <option value="HU">Венгрия</option>
+    <option value="VE">Венесуэла</option>
+    <option value="VG">Виргинские о-ва (Британские)</option>
+    <option value="VI">Виргинские о-ва (США)</option>
+    <option value="UM">Внешние малые о-ва (США)</option>
+    <option value="TL">Восточный Тимор</option>
+    <option value="VN">Вьетнам</option>
+    <option value="GA">Габон</option>
+    <option value="HT">Гаити</option>
+    <option value="GY">Гайана</option>
+    <option value="GM">Гамбия</option>
+    <option value="GH">Гана</option>
+    <option value="GP">Гваделупа</option>
+    <option value="GT">Гватемала</option>
+    <option value="GN">Гвинея</option>
+    <option value="GW">Гвинея-Бисау</option>
+    <option value="DE">Германия</option>
+    <option value="GG">Гернси</option>
+    <option value="GI">Гибралтар</option>
+    <option value="HN">Гондурас</option>
+    <option value="HK">Гонконг (особый район)</option>
+    <option value="GD">Гренада</option>
+    <option value="GL">Гренландия</option>
+    <option value="GR">Греция</option>
+    <option value="GE">Грузия</option>
+    <option value="GU">Гуам</option>
+    <option value="DK">Дания</option>
+    <option value="JE">Джерси</option>
+    <option value="DJ">Джибути</option>
+    <option value="DM">Доминика</option>
+    <option value="DO">Доминиканская Республика</option>
+    <option value="EG">Египет</option>
+    <option value="ZM">Замбия</option>
+    <option value="EH">Западная Сахара</option>
+    <option value="ZW">Зимбабве</option>
+    <option value="IL">Израиль</option>
+    <option value="IN">Индия</option>
+    <option value="ID">Индонезия</option>
+    <option value="JO">Иордания</option>
+    <option value="IQ">Ирак</option>
+    <option value="IR">Иран</option>
+    <option value="IE">Ирландия</option>
+    <option value="IS">Исландия</option>
+    <option value="ES">Испания</option>
+    <option value="IT">Италия</option>
+    <option value="YE">Йемен</option>
+    <option value="KP">КНДР</option>
+    <option value="CV">Кабо-Верде</option>
+    <option value="KZ">Казахстан</option>
+    <option value="KY">Каймановы о-ва</option>
+    <option value="KH">Камбоджа</option>
+    <option value="CM">Камерун</option>
+    <option value="CA">Канада</option>
+    <option value="QA">Катар</option>
+    <option value="KE">Кения</option>
+    <option value="CY">Кипр</option>
+    <option value="KG">Киргизия</option>
+    <option value="KI">Кирибати</option>
+    <option value="CN">Китай</option>
+    <option value="CC">Кокосовые о-ва</option>
+    <option value="CO">Колумбия</option>
+    <option value="KM">Коморские о-ва</option>
+    <option value="CG">Конго - Браззавиль</option>
+    <option value="CD">Конго - Киншаса</option>
+    <option value="CR">Коста-Рика</option>
+    <option value="CI">Кот-д'Ивуар</option>
+    <option value="CU">Куба</option>
+    <option value="KW">Кувейт</option>
+    <option value="LA">Лаос</option>
+    <option value="LV">Латвия</option>
+    <option value="LS">Лесото</option>
+    <option value="LR">Либерия</option>
+    <option value="LB">Ливан</option>
+    <option value="LY">Ливия</option>
+    <option value="LT">Литва</option>
+    <option value="LI">Лихтенштейн</option>
+    <option value="LU">Люксембург</option>
+    <option value="MU">Маврикий</option>
+    <option value="MR">Мавритания</option>
+    <option value="MG">Мадагаскар</option>
+    <option value="YT">Майотта</option>
+    <option value="MO">Макао (особый район)</option>
+    <option value="MK">Македония</option>
+    <option value="MW">Малави</option>
+    <option value="MY">Малайзия</option>
+    <option value="ML">Мали</option>
+    <option value="MV">Мальдивские о-ва</option>
+    <option value="MT">Мальта</option>
+    <option value="MA">Марокко</option>
+    <option value="MQ">Мартиника</option>
+    <option value="MH">Маршалловы о-ва</option>
+    <option value="MX">Мексика</option>
+    <option value="MZ">Мозамбик</option>
+    <option value="MD">Молдова</option>
+    <option value="MC">Монако</option>
+    <option value="MN">Монголия</option>
+    <option value="MS">Монтсеррат</option>
+    <option value="MM">Мьянма (Бирма)</option>
+    <option value="NA">Намибия</option>
+    <option value="NR">Науру</option>
+    <option value="NP">Непал</option>
+    <option value="NE">Нигер</option>
+    <option value="NG">Нигерия</option>
+    <option value="AN">Нидерландские Антильские о-ва</option>
+    <option value="NL">Нидерланды</option>
+    <option value="NI">Никарагуа</option>
+    <option value="NU">Ниуэ</option>
+    <option value="NZ">Новая Зеландия</option>
+    <option value="NC">Новая Каледония</option>
+    <option value="NO">Норвегия</option>
+    <option value="BV">О-в Буве</option>
+    <option value="IM">О-в Мэн</option>
+    <option value="NF">О-в Норфолк</option>
+    <option value="CX">О-в Рождества</option>
+    <option value="SH">О-в Св. Елены</option>
+    <option value="CK">О-ва Кука</option>
+    <option value="TC">О-ва Тёркс и Кайкос</option>
+    <option value="HM">О-ва Херд и Макдональд</option>
+    <option value="AE">ОАЭ</option>
+    <option value="OM">Оман</option>
+    <option value="PK">Пакистан</option>
+    <option value="PW">Палау</option>
+    <option value="PS">Палестинские территории</option>
+    <option value="PA">Панама</option>
+    <option value="PG">Папуа – Новая Гвинея</option>
+    <option value="PY">Парагвай</option>
+    <option value="PE">Перу</option>
+    <option value="PN">Питкэрн</option>
+    <option value="PL">Польша</option>
+    <option value="PT">Португалия</option>
+    <option value="PR">Пуэрто-Рико</option>
+    <option value="KR">Республика Корея</option>
+    <option value="RE">Реюньон</option>
+    <option value="RU">Россия</option>
+    <option value="RW">Руанда</option>
+    <option value="RO">Румыния</option>
+    <option value="SV">Сальвадор</option>
+    <option value="WS">Самоа</option>
+    <option value="SM">Сан-Марино</option>
+    <option value="ST">Сан-Томе и Принсипи</option>
+    <option value="SA">Саудовская Аравия</option>
+    <option value="SZ">Свазиленд</option>
+    <option value="MP">Северные Марианские о-ва</option>
+    <option value="SC">Сейшельские о-ва</option>
+    <option value="BL">Сен-Бартельми</option>
+    <option value="MF">Сен-Мартен</option>
+    <option value="PM">Сен-Пьер и Микелон</option>
+    <option value="SN">Сенегал</option>
+    <option value="VC">Сент-Винсент и Гренадины</option>
+    <option value="KN">Сент-Китс и Невис</option>
+    <option value="LC">Сент-Люсия</option>
+    <option value="RS">Сербия</option>
+    <option value="SG">Сингапур</option>
+    <option value="SY">Сирия</option>
+    <option value="SK">Словакия</option>
+    <option value="SI">Словения</option>
+    <option value="US">Соединенные Штаты</option>
+    <option value="SB">Соломоновы о-ва</option>
+    <option value="SO">Сомали</option>
+    <option value="SD">Судан</option>
+    <option value="SR">Суринам</option>
+    <option value="SL">Сьерра-Леоне</option>
+    <option value="TJ">Таджикистан</option>
+    <option value="TH">Таиланд</option>
+    <option value="TW">Тайвань</option>
+    <option value="TZ">Танзания</option>
+    <option value="TG">Того</option>
+    <option value="TK">Токелау</option>
+    <option value="TO">Тонга</option>
+    <option value="TT">Тринидад и Тобаго</option>
+    <option value="TV">Тувалу</option>
+    <option value="TN">Тунис</option>
+    <option value="TM">Туркменистан</option>
+    <option value="TR">Турция</option>
+    <option value="UG">Уганда</option>
+    <option value="UZ">Узбекистан</option>
+    <option value="UA">Украина</option>
+    <option value="WF">Уоллис и Футуна</option>
+    <option value="UY">Уругвай</option>
+    <option value="FO">Фарерские о-ва</option>
+    <option value="FM">Федеративные Штаты Микронезии</option>
+    <option value="FJ">Фиджи</option>
+    <option value="PH">Филиппины</option>
+    <option value="FI">Финляндия</option>
+    <option value="FK">Фолклендские о-ва</option>
+    <option value="FR">Франция</option>
+    <option value="GF">Французская Гвиана</option>
+    <option value="PF">Французская Полинезия</option>
+    <option value="TF">Французские Южные Территории</option>
+    <option value="HR">Хорватия</option>
+    <option value="CF">ЦАР</option>
+    <option value="TD">Чад</option>
+    <option value="ME">Черногория</option>
+    <option value="CZ">Чехия</option>
+    <option value="CL">Чили</option>
+    <option value="CH">Швейцария</option>
+    <option value="SE">Швеция</option>
+    <option value="SJ">Шпицберген и Ян-Майен</option>
+    <option value="LK">Шри-Ланка</option>
+    <option value="EC">Эквадор</option>
+    <option value="GQ">Экваториальная Гвинея</option>
+    <option value="ER">Эритрея</option>
+    <option value="EE">Эстония</option>
+    <option value="ET">Эфиопия</option>
+    <option value="ZA">ЮАР</option>
+    <option value="GS">Южная Георгия и Южные Сандвичевы о-ва</option>
+    <option value="JM">Ямайка</option>
+    <option value="JP">Япония</option>
+</select>                <span class="error-registr-job" style="display:none;">Required fields are missing! Please fill all fields marked with *</span>
+    </div>
+    <div class="grid_6">
+        <label for="jobRegion" class="required">Region :</label>
+        
+<select name="jobRegion" id="jobRegion">
+    <option value="Badakhshan">Badakhshan</option>
+    <option value="Badghis">Badghis</option>
+    <option value="Baghlan">Baghlan</option>
+    <option value="Balkh">Balkh</option>
+    <option value="Bamian">Bamian</option>
+    <option value="Daykondi">Daykondi</option>
+    <option value="Farah">Farah</option>
+    <option value="Faryab">Faryab</option>
+    <option value="Ghazni">Ghazni</option>
+    <option value="Ghowr">Ghowr</option>
+    <option value="Helmand">Helmand</option>
+    <option value="Herat">Herat</option>
+    <option value="Jowzjan">Jowzjan</option>
+    <option value="Kabol">Kabol</option>
+    <option value="Kandahar">Kandahar</option>
+    <option value="Kapisa">Kapisa</option>
+    <option value="Khowst">Khowst</option>
+    <option value="Konar">Konar</option>
+    <option value="Kondoz">Kondoz</option>
+    <option value="Laghman">Laghman</option>
+    <option value="Lowgar">Lowgar</option>
+    <option value="Nangarhar">Nangarhar</option>
+    <option value="Nimruz">Nimruz</option>
+    <option value="Nurestan">Nurestan</option>
+    <option value="Oruzgan">Oruzgan</option>
+    <option value="Paktia">Paktia</option>
+    <option value="Paktika">Paktika</option>
+    <option value="Panjshir">Panjshir</option>
+    <option value="Parvan">Parvan</option>
+    <option value="Samangan">Samangan</option>
+    <option value="Sar-e Pol">Sar-e Pol</option>
+    <option value="Takhar">Takhar</option>
+    <option value="Vardak">Vardak</option>
+    <option value="Zabol">Zabol</option>
+</select>                <span class="error-registr-job" style="display:none;">Required fields are missing! Please fill all fields marked with *</span>
+    </div>
+    <div class="grid_6">
+        <label for="jobCity" class="required">City :</label>
+        
+<input type="text" name="jobCity" id="jobCity" value="" class="required">                <span class="error-registr-job" style="display:none;">Required fields are missing! Please fill all fields marked with *</span>
+    </div>
+    <div class="grid_6">
+        <label for="jobHours" class="required">Hours :</label>
+        
+<select name="jobHours" id="jobHours" class="required">
+    <option value="full_time">Full time only</option>
+    <option value="intern_only">Intern only</option>
+    <option value="contract_only">Contract only</option>
+</select>                <span class="error-registr-job" style="display:none;">Required fields are missing! Please fill all fields marked with *</span>
+    </div>
+    <div class="grid_6">
+        <label for="jobTelephone" class="required">Contact number :</label>
+        
+<input type="text" name="jobTelephone" id="jobTelephone" value="" class="required">                <span class="error-registr-job" style="display:none;">Required fields are missing! Please fill all fields marked with *</span>
+    </div>
+    <div class="grid_6">
+        <label for="jobEmail" class="required">Email :</label>
+        
+<input type="text" name="jobEmail" id="jobEmail" value="" class="required">                <span class="error-registr-job" style="display:none;">Required fields are missing! Please fill all fields marked with *</span>
+    </div>
+    <div class="grid_6">
+        <label for="jobRequisition">Requisition :</label>
+        
+<select name="jobRequisition" id="jobRequisition" class="required">
+    <option value="1">Any</option>
+    <option value="2">Entry level</option>
+    <option value="3">1-3 years</option>
+    <option value="4">3-4 years</option>
+    <option value="5">5-7 years</option>
+    <option value="6">7-10 years</option>
+    <option value="7">10-15 years</option>
+    <option value="8">15+</option>
+</select>                <span class="error-registr-job" style="display:none;">Required fields are missing! Please fill all fields marked with *</span>
+    </div>
+    <div class="grid_6">
+        <label for="jobSalary" class="required">Salary :</label>
+        
+<input type="text" name="jobSalary" id="jobSalary" value="" class="required">                <span class="error-registr-job" style="display:none;">Required fields are missing! Please fill all fields marked with *</span>
+    </div>
+    <div class="grid_12 jobHideCompany">
+        <label for="jobCompany" class="required">Choose company :</label>
+        
+<select name="jobCompany" id="jobCompany">
+    
+</select>            </div>
+    <div class="grid_12">
+        <label for="jobSite">Company website :</label>
+        
+<input type="text" name="jobSite" id="jobSite" value="http://">            </div>
+    <div class="grid_12">
+        <label for="jobDescription" class="required">Description </label>
+        
+<textarea name="jobDescription" id="jobDescription" rows="10" class="required" cols="80"></textarea>                <span class="error-registr-job" style="display:none;">Required fields are missing! Please fill all fields marked with *</span>
+    </div>
+    <div class="grid_12">
+        <label for="jobCategory" class="required">Category :</label>
+        
+<select name="jobCategory" id="jobCategory">
+    <option value="1">Accounting</option>
+    <option value="2">Agency</option>
+    <option value="3">Animation</option>
+    <option value="4">Architecture</option>
+    <option value="5">Automotive</option>
+    <option value="6">Banking</option>
+    <option value="7">Biotechnology</option>
+    <option value="8">Bar</option>
+    <option value="9">Chemicals</option>
+    <option value="11">Civic &amp; Social</option>
+    <option value="12">Civil Engineering</option>
+    <option value="13">Commercial Real Estate</option>
+    <option value="14">Computer &amp; Security</option>
+    <option value="15">Computer Hardware</option>
+    <option value="16">Computer Networking</option>
+    <option value="17">Computer Software</option>
+    <option value="18">Construction</option>
+    <option value="19">Consumer Electronics</option>
+    <option value="20">Consumer Goods</option>
+    <option value="21">Consumer Services</option>
+    <option value="22">Cosmetics</option>
+    <option value="23">Dairy</option>
+    <option value="24">Defense &amp;amp; Space</option>
+    <option value="25">Design</option>
+    <option value="26">Education Management</option>
+    <option value="27">E-Learning</option>
+    <option value="28">Electrical/Electronic Manufacturing</option>
+    <option value="29">Entertainment</option>
+    <option value="30">Environmental Services</option>
+    <option value="31">Events</option>
+    <option value="32">Executive Office</option>
+    <option value="33">Facilities Services</option>
+    <option value="34">Farming</option>
+    <option value="35">Financial</option>
+    <option value="36">Fine Art</option>
+    <option value="37">Fishery</option>
+    <option value="38">Food &amp; Beverages</option>
+    <option value="39">Food Production</option>
+    <option value="40">Fund-Raising</option>
+    <option value="41">Furniture</option>
+    <option value="42">Games</option>
+    <option value="43">Gambling &amp; Casinos</option>
+    <option value="44">Glass, Ceramics &amp;amp; Concrete</option>
+    <option value="45">Government Administration</option>
+    <option value="46">Government Relations</option>
+    <option value="47">Health, Wellness and Fitness</option>
+    <option value="48">Higher Education</option>
+    <option value="49">Hospital &amp; Health Care</option>
+    <option value="50">Import and Export</option>
+    <option value="51">Industrial Automation</option>
+    <option value="52">Import and Export</option>
+    <option value="54">Information Services</option>
+    <option value="55">Information Technology and Services</option>
+    <option value="56">Insurance</option>
+    <option value="57">International Affairs</option>
+    <option value="58">Internet</option>
+    <option value="59">Investment Banking</option>
+    <option value="60">Information Technology</option>
+    <option value="61">Management</option>
+    <option value="62">Judiciary</option>
+    <option value="63">Legal Services</option>
+    <option value="64">Legislative Office</option>
+    <option value="65">Leisure, Travel &amp; Tourism</option>
+    <option value="66">Libraries</option>
+    <option value="67">Logistics and Supply Chain</option>
+    <option value="68">Luxury Goods &amp; Jewelry</option>
+    <option value="69">Machinery</option>
+    <option value="70">Management Consulting</option>
+    <option value="71">Maritime</option>
+    <option value="72">Marketing and Advertising</option>
+    <option value="73">Market Research</option>
+    <option value="74">Mechanical or Industrial Engineering</option>
+    <option value="75">Media Production</option>
+    <option value="76">Medical Devices</option>
+    <option value="77">Medical Practice</option>
+    <option value="78">Mental Health Care</option>
+    <option value="79">Military</option>
+    <option value="80">Mining &amp; Metals</option>
+    <option value="81">Motion Pictures and Film</option>
+    <option value="82">Museums and Institutions</option>
+    <option value="83">Music</option>
+    <option value="84">Nanotechnology</option>
+    <option value="85">Newspapers</option>
+    <option value="86">Nonprofit Organization Management</option>
+    <option value="87">Oil &amp; Energy</option>
+    <option value="88">Online Media</option>
+    <option value="89">Outsourcing</option>
+    <option value="90">Package Delivery</option>
+    <option value="91">Packaging and Containers</option>
+    <option value="92">Paper &amp; Forest Products</option>
+    <option value="93">Performing Arts</option>
+    <option value="94">Pharmaceuticals</option>
+    <option value="95">Philanthropy</option>
+    <option value="96">Photography</option>
+    <option value="97">Plastics</option>
+    <option value="98">Political Organization</option>
+    <option value="99">Primary Or Secondary Education</option>
+    <option value="100">Printing</option>
+    <option value="101">Professional Training &amp; Coaching</option>
+    <option value="102">Program Development</option>
+    <option value="103">Public Policy</option>
+    <option value="104">Public Relations and Communications</option>
+    <option value="105">Public Safety</option>
+    <option value="106">Publishing</option>
+    <option value="107">Railroad Manufacture</option>
+    <option value="108">Ranching</option>
+    <option value="109">Real Estate</option>
+    <option value="110">Recreational Facilities and Services</option>
+    <option value="111">Religious Institutions</option>
+    <option value="112">Renewables and Environment</option>
+    <option value="113">Research</option>
+    <option value="114">Restaurants</option>
+    <option value="115">Retail</option>
+    <option value="116">Security and Investigations</option>
+    <option value="117">Semiconductors</option>
+    <option value="118">Shipbuilding</option>
+    <option value="119">Sporting Goods</option>
+    <option value="120">Sports</option>
+    <option value="121">Staffing and Recruiting</option>
+    <option value="122">Supermarkets</option>
+    <option value="123">Telecommunications</option>
+    <option value="124">Textiles</option>
+    <option value="125">Think Tanks</option>
+    <option value="126">Tobacco</option>
+    <option value="127">Translation and Localization</option>
+    <option value="128">Transportation</option>
+    <option value="129">Utilities</option>
+    <option value="130">Venture Capital &amp; Private Equity</option>
+    <option value="131">Utilities</option>
+    <option value="132">Veterinary</option>
+    <option value="133">Warehousing</option>
+    <option value="134">Wholesale</option>
+    <option value="135">Wine and Spirits</option>
+    <option value="136">Wireless</option>
+    <option value="137">Writing and Editing</option>
+</select>                <span class="error-registr-job" style="display:none;">Required fields are missing! Please fill all fields marked with *</span>
+    </div>
+
+    <div class="grid_12">
+        <label for="jobAbility">Ability :</label>
+        <div class="add-job-ability-data-block">
+            <input class="job-ability-data" type="text" name="jobAbility[]">
+        </div>
+        <a id="add-new-job-ability" href="javascript:;">+ Add new</a>
+    </div>
+
+    
+<button name="saveJob" id="saveJob" type="submit">NEXT STEP</button>    <a href="javascript:;" class="job-back-to-grid">Back</a>
+</form>

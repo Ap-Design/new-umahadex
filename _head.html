@@ -1,0 +1,54 @@
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>{$page:title}</title>
+        <meta name="keywords" content="{$meta:keywords}">
+        <meta name="description" content="{$meta:description}">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes"> <!-- open in full-screen, hide URL bar (for IOS)-->
+    <meta name="google-site-verification" content="eZaWS03csuUtzOAYZ8SSqgpcUCR9zIKSHjIYuev3We4" />
+        <!-- Favicons -->
+        <link rel="icon" href="images/favicon.ico">
+        <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
+        <link rel="apple-touch-icon" href="images/apple-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:200,400,700|Roboto:300,400,500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' media="screen">
+        <!-- CSS -->
+        <link type="text/css" rel="stylesheet" href="css/lightslider.css" /> 
+       {concatcss}
+<link href="css/reset.css" rel="stylesheet" media="all">
+<link href="css/content.css" rel="stylesheet" media="all">
+<link href="css/nav.css" rel="stylesheet" media="all">
+<link href="css/style.css" rel="stylesheet" media="all">
+<!-- Additional css -->
+{/concatcss}
+
+        <!-- HTML5shiv and selectivizr.js IE support of HTML5 elements and CSS3 pseudo-classes, attribute selectors -->
+        <!--[if lt IE 9]><script src="js/system/ie-pack.js"></script><![endif]-->
+    
+ <!--Logout then redirect on proper page-->
+ <script type="text/javascript">
+    $(document).on('click', '.logout', function(e){
+       e.preventDefault();
+       showSpinner();
+       $.post($(e.currentTarget).attr('href'), function(){
+           //put here your url 
+           hideSpinner();
+           window.location.href = 'ads.html';
+       });
+    });
+     <!--Featured area links like search-->
+    $(document).on('click', '#index li', function(e){
+       e.preventDefault();
+       window.location.href = $(this).find('.page-teaser-image').attr('href')+'?country='+$('#searchCountry').val();
+    });
+ </script>
+
+      <script src="js/lightslider.js"></script>
+
+    </head>

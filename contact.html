@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <!--Head-->
+        {$template:_head}
+    <body class="{$mobile:device}">
+
+     
+       {$template:_header-mobile}
+        
+         <!-- Header -->
+            <div>{$template:_header}</div>
+            
+        <!-- Container -->
+        <div class="wrapone">
+        <div id="container" class="container">
+        <h1 class="grid_12">{$page:h1}</h1>
+            
+             <!-- Content box -->
+            <div id="content" class="grid_9"> 
+                {$content:content12}
+                <h2>{$header:content2}</h2>
+                {$content:content21}
+                {$content:content22}
+            </div>
+
+            <!-- Right box -->
+            <aside id="right" class="grid_3 t-hide m-hide">
+                <div class="aside-box">
+                    <h3>{$header:right1:static}</h3>  
+                    {$content:right1:static}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:right2}</h3>
+                    {$content:right2}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:right3}</h3>
+                    {$content:right3}
+                </div>
+            </aside>
+
+        </div>
+        </div>
+        <!--Footer-->
+        {device:desktop}
+            <div>{$template:_footer}</div>
+        {/device}
+        
+        {device:tablet}
+            <div>{$template:_footertablet}</div>
+        {$template:_footertablet}
+        {/device}
+        
+        {device:mobile}
+            <div>{$template:_footermobile}</div>
+        {/device}
+        
+        <!-- SCRIPTS ZONE -->
+        <script>
+            $(function(){
+            });
+        </script>
+        <script src="js/scripts.min.js"></script>
+        <script src="js/system/skeleton.min.js"></script>
+    </body>
+</html>

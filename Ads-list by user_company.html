@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    {$template:_head}
+    <body class="{$mobile:device}">
+
+      {$template:_header-mobile}
+         <!-- Header -->
+           {$template:_header}
+    <div class="wrapone">
+            <div class="inner-search-box">
+                <div class="container">
+                
+                    <div class="grid_3 t-hide m-hide">{$header:search-company:static}</div>
+                    {$template:_jsearchforms}
+                    
+                </div>        
+            </div>
+        <!-- Container -->
+        <div id="container" class="container mob-container ">
+            <div class="grid_12 banners text-center">
+                <!--{$ imageonly:banner3:940:static}-->
+                {device:desktop}{$content:banner:static}{/device}
+                {device:mobile}{$content:banner-mob:static}{/device}
+                {device:tablet}{$content:banner-mob:static}{/device}
+                {device:desktop}{$content:map:static}{/device}
+            </div>
+            <h1 class="grid_12 h1_local">
+                <span>{$plugin:joblist:listingName}{$page:h1}</span>
+            </h1>
+            <!-- Content box -->
+            <div id="content" class="grid_8"> 
+                <ul class="adv-list list-unstyled">
+                {advlist:adv-list-name-free:tags:{$header:tags:readonly}:type:premium:limit:10}
+                    <li class="adv-list-item {$company:type:readonly} clearfix">
+                        <div class="adv-img grid_4 t-grid_2 my_m-grid_leftc"> 
+                        <a class="h3 primary2 block" href="{$page:url}"> {$directupload:{$adv:id}:logo:220:placeholder}</a>
+                            
+                        </div>
+                        <div class="right_adv_block grid_8 t-grid_4 my_m-grid_leftr">
+                            <a class="h3 primary2 block" href="{$page:url}">{$adv:name:readonly}</a>
+                            <div class="grid_12 t-grid_5 my_m-grid_3 adv-box">
+                                <p class="grid_6 t-grid_4 m-grid_3 name_user_post">
+                                    <span class="icon-user"></span>
+                                    <span>{$adv:business}</span>
+                                <p class="grid_6 t-hide m-hide adv-price">
+                                    <span>{$header:price2:static}</span>{$adv:price:readonly} {$adv:currency:readonly}
+                                </p>
+                                </p>
+                            </div>  
+                             <p class="d-hide t-grid_2 m-grid_2 adv-price"><span class="t-hide m-hide">{$header:price2:static}</span>{$adv:price:readonly} {$adv:currency:readonly}</p>
+                            <div class="grid_6 t-grid_3 m-grid_2 fl-right btn_block">
+                                <a class="btn adv_primary2 mt15px {$mobile:device:mobile=block}" href="{$page:url}">
+                                    Buy now
+                                </a>
+                            </div>    
+                        </div>    
+                    </li>
+                    {/advlist}                    
+                </ul>
+                
+                {$content:content11}
+                {$content:content12}
+                <h2>{$header:content2}</h2>
+                {$content:content21}
+                {$content:content22}
+                <h2>{$header:content3}</h2>
+                {$content:content31}
+                {$content:content32}
+            </div>
+
+            <!-- Right box -->
+            <aside id="right" class="grid_4 t-hide m-hide">
+                
+                <div class="aside-box">
+                    <h3>{$header:right2:static}</h3>
+                   <!-- <h3 class="brand">{$ header:GoldenAdvertisements:static}</h3>-->
+                    {$plugin:joblist:random:adv:golden:250:3}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:right3:static}</h3>
+                    {$content:right3:static}
+                </div>
+            </aside>
+
+        </div>
+    </div>
+        <!-- Footer -->
+        <footer class="mt0px">
+            <!-- Container -->
+            <div class="container">
+                <div class="footer-box grid_2x t-grid_6 m-grid_4">
+                    <h4 class="icon-arrow-down">{$header:footer1:static}</h4>
+                    {$featuredonly:footer1:static}
+                    {$content:footer1:static}
+                </div>
+                <div class="footer-box grid_2x t-grid_6 m-grid_4">
+                    <h4 class="icon-arrow-down">{$header:footer2:static}</h4>   
+                    {$featuredonly:footer2:static}
+                    {$content:footer2:static}    
+                </div>
+                <div class="footer-box grid_2x t-grid_6 m-grid_4">
+                    <h4 class="icon-arrow-down">{$header:footer3:static}</h4>
+                    {$featuredonly:footer3:static}
+                    {$content:footer3:static}
+                </div>
+                <div class="footer-box grid_2x t-grid_6 m-grid_4">
+                    <h4 class="icon-arrow-down">{$header:footer4:static}</h4>
+                    {$featuredonly:footer4:static}
+                    {$content:footer4:static}
+                </div>
+                <div class="footer-box grid_2x t-grid_6 m-grid_4 {$mobile:device:mobile=text-center:tablet=text-center}">
+                    <h4>{$header:footer5:static}</h4>
+                        <nav class="social-links gl-change {$mobile:device:mobile=text-center:tablet=text-center:desktop=text-left} mb15px">                            
+                            <a class="facebook icon-facebook" target="_blank" href="{$plugin:widcard:BizFbAccount:notag}"></a>                            
+                            <a class="vkontakte icon-vkontakte" target="_blank" href="{$header:vkontakte:static:readonly}">
+                                {$header:vkontakte:static}
+                            </a>
+                        </nav>     
+                </div>
+                <span class="clearfix"></span>
+                <!-- Footer info -->
+                <div class="grid_9 footer-info t-grid_6 m-grid_4">
+                    {$content:footer-info:static}
+                </div>
+                <div class="grid_3 footer-info t-grid_6 m-grid_4 t-hide m-hide">
+                    {$imageonly:logo2:125:static}
+                </div>
+            </div>  
+        </footer>
+
+        <!-- SCRIPTS ZONE -->
+        <script>
+            $(function(){
+            });
+        </script>
+        <script src="js/plugin/jquery.cycle2.min.js"></script>
+        <script src="js/scripts.min.js"></script>
+        <script src="js/system/skeleton.min.js"></script>
+    </body>
+</html>

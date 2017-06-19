@@ -1,0 +1,82 @@
+<!-- Top bar for mobile, with button show/hide menu -->
+        <div class="top-block clearfix d-hide">
+            <label data-menu=".static_menu" data-menu-position="left" class="left_btn_menu menu-btn fl-left icon-list2 btn large"></label>
+            
+            <div class="logo t-grid_2 m-grid_2">
+                <a href="{$website:url}" title="{$page:h1}">
+                    <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">
+                </a>
+            </div>
+            <div class="my-t-grid_1 text-right"><label data-menu=".mob-menu" data-menu-position="right" class="menu-btn user fl-center icon-user btn large"></label></div>{memberonly}
+            <div class="grid_1 my-t-grid_1 dashboard mobile-dashboard m-hide">
+                            <a href="/dashboard.html">
+                            <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            </a>
+                            </div>{/memberonly}
+            <div class="grid_2 t-grid_2 mobile_post-ad">
+                        <a href="/login.html" class="{memberonly}hidden{/memberonly} post-ad"><span>Post Ad</span></a>
+                        {memberonly}<a href="http://new.umahadex.com/postad.html" class="post-ad"><span>Post Ad</span></a>{/memberonly}
+                        
+            </div>
+            
+            
+        </div>
+         <ul class="static_menu mobile-menu left d-hide">
+			<li><a href="/businesses.html" title="Local Businesses Around You"><span>Find a Pro</span></a></li>
+			<li><a href="/jobs.html" title="Jobs"><span>Search now</span></a></li>
+			<li><a href="/classified-ads.html" title="Classified Ads"><span>Go to Ads</span></a></li>
+			<li><a href="/new-products-and-services.html" title="New Products And Services"><span>New products and services</span></a></li>
+			
+	</ul>
+	
+        <!--<div class="top-line">
+            <div class="container">
+                <div class="grid_1 t-grid_1 m-grid_1">
+                    {$header:header1:static}
+                </div>
+                <ul class="language grid_2 t-grid_2 m-grid_1">
+                    <li>
+                        <a href="#">English</a>
+                    </li>
+                    <li>
+                        <a href="#">Russian</a>
+                    </li>
+                </ul>
+                <div class="grid_1 t-grid_1 m-grid_1">
+                    {$header:header2:static}
+                </div>
+                <div class="carrency grid_2 suffix_5 t-grid_2 m-grid_1">
+                    {$jcurrency:currency}
+                </div>
+            </div>
+        </div>-->
+        <ul class="mob-menu d-hide">
+            {memberonly}
+            <li>
+                  <a href="/dashboard.html" class="">Dashboard</a>  <!--/grid.html-->
+            </li>
+           <!-- <li>
+                <a href="/member-landing-page.html" class="">account details</a>  
+            </li>
+            <li>
+                <a href="/member-landing-page.html" class="">change password</a>  
+            </li>-->
+            <li>
+                <a href="/plans.html" class="">Join premium</a>  
+            </li>
+            <li>
+                {$member:logout}
+            </li>
+            {/memberonly}
+            <li class="{memberonly}hidden{/memberonly}">
+                <a class="" href="{$prepop:action-btnLink-key1:text:static:readonly}">{$prepop:action-btnText-key1:text:static:readonly}</a>
+            </li>
+            <li class="{memberonly}hidden{/memberonly}">
+                <a class="" href="{$prepop:action-btnLink-key2:text:static:readonly}">{$prepop:action-btnText-key2:text:static:readonly}</a> 
+            </li>
+            <!--<li  class="{memberonly}hidden{/memberonly}">
+                <a href="/sign-in.html" class="">POST NOW</a>  
+            </li>-->
+            <li>{$auth:facebook}</li>
+            <!--action-btn login-menu-btn icon-user btn-->
+        </ul>

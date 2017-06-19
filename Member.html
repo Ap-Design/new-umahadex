@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <!--Head-->
+        {$template:_head}
+    
+    <body class="{$mobile:device}">
+
+      {$template:_header-mobile}
+         <!-- Header -->
+           {$template:_header}
+            
+        <!-- Container -->
+        <div id="container" class="container">
+        <h1 class="grid_12">{$page:h1}</h1>
+            <!-- Left box -->
+            <ul class="grid_2 member-tabs tab_nav">
+                <li class="tab1">
+                    {$header:content11}
+                </li>  
+                <li class="tab2">
+                    {$header:content12}
+                </li>  
+                <li class="tab3 active">
+                    {$header:content13}
+                </li> 
+            </ul>
+            <!-- Content box -->
+            <div id="content" class="grid_10">
+                <div class="tab">{$content:content11}</div>
+                <div class="tab">{$content:content12}</div>
+                <div class="tab">{$content:content13}</div>
+            </div>
+            
+        </div>
+
+        <!--Footer-->
+        {device:desktop}
+            <div>{$template:_footer}</div>
+        {/device}
+        
+        {device:tablet}
+            <div>{$template:_footertablet}</div>
+        {$template:_footertablet}
+        {/device}
+        
+        {device:mobile}
+            <div>{$template:_footermobile}</div>
+        {/device}
+
+        <!-- SCRIPTS ZONE -->
+        <script>
+            $(function(){
+                var $tab=$(".tab"),
+                $tab_li=$(".tab_nav li");
+                $tab.hide();
+                $tab_li.first().addClass("activ").show();
+                $tab.first().show();
+                $tab_li.click( function() {
+                     $tab_li.removeClass("activ");
+                     $(this).addClass("activ");
+                     $tab.hide();
+                     var a = $tab_li.index(this);
+                     $tab.eq(a).show()
+                });
+            });
+        </script>
+        <script src="js/scripts.min.js"></script>
+        <script src="js/system/skeleton.min.js"></script>
+    </body>
+</html>

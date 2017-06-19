@@ -1,0 +1,40 @@
+.img_gallery{
+    //margin : 10px 0;
+    .inline-block-wrap(middle, li);
+
+    li{
+        //.grid-elements(6, @grid-margin-width, false, 3, 3);
+        width: 15.666666666666668%;
+        position   : relative;
+        margin     : 0 1% 5px 0;
+        text-align : center;
+        //.opacity(0.5);
+        //.thumbnail-state();
+        &:hover{
+            //.opacity(1);
+        }
+        .tpopup{
+            position : absolute;
+            top      : 0;
+            left     : 0;
+        }
+    }
+
+    a{
+
+        img{ }
+    }
+
+    .image_caption{
+        position : absolute;
+        bottom   : 0;
+        left     : 0;
+        right    : 0;
+        z-index  : 10;
+        margin   : 0;
+        .text-overflow;
+    }
+}
+
+// TODO add new gallery style  http://demosthenes.info/blog/844/Easy-Masonry-Layout-With-Flexbox
+// Easy Masonry Layout With Flexbox

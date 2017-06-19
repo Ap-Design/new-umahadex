@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <!--Head-->
+        {$template:_head}
+    
+    <body class="{$mobile:device}">
+
+       {$template:_header-mobile}
+         <!-- Header -->
+            {$template:_header}
+            
+            <div class="inner-search-box">
+                <div class="container">
+                
+                    <div class="grid_3 t-hide m-hide">{$header:search-company:static}</div>
+                    <div class="grid_8 suffix_1">{$jsearch:form:adv}</div>   
+                    
+                </div>        
+            </div>
+        <!-- Container -->
+        <div id="container" class="container">
+            <div class="grid_12 banners text-center">
+                <!--{$ imageonly:banner3:940:static}-->
+                {device:desktop}{$content:banner:static}{/device}
+                {device:mobile}{$content:banner-mob:static}{/device}
+                {device:tablet}{$content:banner-mob:static}{/device}
+                {device:desktop}{$content:map:static}{/device}
+            </div>
+            <h1 class="grid_12 text-line">
+                <span>{$plugin:joblist:listingName}{$page:h1}</span>
+            </h1>
+            <!-- Content box -->
+            <div id="content" class="grid_9"> 
+                {$plugin:joblist:wishlist:list:3}
+                {$content:content11}
+                {$content:content12}
+            </div>
+
+            <!-- Right box -->
+            <aside id="right" class="grid_3 t-hide m-hide">
+                
+                <div class="aside-box">
+                    <h3>{$header:right2:static}</h3>
+                    <h3 class="brand">{$header:GoldenAdvertisements:static}</h3>
+                    {$plugin:joblist:random:adv:golden:250:3}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:right3:static}</h3>
+                    {$content:right3:static}
+                </div>
+            </aside>
+
+        </div>
+
+        <!--Footer-->
+        {device:desktop}
+            <div>{$template:_footer}</div>
+        {/device}
+        
+        {device:tablet}
+            <div>{$template:_footertablet}</div>
+        {$template:_footertablet}
+        {/device}
+        
+        {device:mobile}
+            <div>{$template:_footermobile}</div>
+        {/device}
+
+        <!-- SCRIPTS ZONE -->
+        <script>
+            $(function(){
+            });
+        </script>
+        <script src="js/plugin/jquery.cycle2.min.js"></script>
+        <script src="js/scripts.min.js"></script>
+        <script src="js/system/skeleton.min.js"></script>
+    </body>
+</html>

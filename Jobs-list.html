@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>{$page:title}</title>
+  <meta name="keywords" content="{$meta:keywords}">
+  <meta name="description" content="{$meta:description}">
+
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes"> <!-- open in full-screen, hide URL bar (for IOS)-->
+  <meta name="google-site-verification" content="eZaWS03csuUtzOAYZ8SSqgpcUCR9zIKSHjIYuev3We4" />
+  <!-- Favicons -->
+  <script type="text/javascript">
+          $(function(){
+              var listItems = $('.job-list-item');
+              $.each(listItems, function(id, item){
+                var listingElemUrl = $(this).find('.primary2').attr('href');
+                $(this).find('a').removeClass('_lbox');
+              });
+          });
+      </script>
+        <script type="text/javascript">
+          $(function(){
+              var listItems = $('.job-list-item');
+              $.each(listItems, function(id, item){
+                var listingElemUrl = $(this).find('.primary2').attr('href');
+                $(this).find('a').attr('href', listingElemUrl);
+              });
+          });
+      </script>
+  <link rel="icon" href="images/favicon.ico">
+  <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
+  <link rel="apple-touch-icon" href="images/apple-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/iconmoon.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:200,400,700|Roboto:300,400,500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' media="screen">
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="css/lightslider.css" /> 
+  {concatcss}
+  <link href="css/reset.css" rel="stylesheet" media="all">
+  <link href="css/content.css" rel="stylesheet" media="all">
+  <link href="css/nav.css" rel="stylesheet" media="all">
+  <link href="css/style.css" rel="stylesheet" media="all">
+  <!-- Additional css -->
+  <link href="css/flexkit.css" rel="stylesheet" media="all">
+  {/concatcss}
+
+  <!-- HTML5shiv and selectivizr.js IE support of HTML5 elements and CSS3 pseudo-classes, attribute selectors -->
+  <!--[if lt IE 9]><script src="js/system/ie-pack.js"></script><![endif]-->
+  
+  <!--Logout then redirect on proper page-->
+  <script type="text/javascript">
+    $(document).on('click', '.logout', function(e){
+     e.preventDefault();
+     showSpinner();
+     $.post($(e.currentTarget).attr('href'), function(){
+           //put here your url 
+           hideSpinner();
+           window.location.href = 'ads.html';
+         });
+   });
+    <!--Featured area links like search-->
+    $(document).on('click', '#index li', function(e){
+     e.preventDefault();
+     window.location.href = $(this).find('.page-teaser-image').attr('href')+'?country='+$('#searchCountry').val();
+   });
+ </script>
+
+ <script src="js/lightslider.js"></script>
+</head>
+<body class="{$mobile:device}">
+  {$template:_header-mobile}
+  <!-- Header -->
+  {$template:_header}
+  <div class="wrapone">
+    <div class="inner-search-box">
+      <div class="container">
+        <div class="grid_3 t-hide m-hide">{$header:search-company:static}</div>
+        {$template:_jsearchforms}   
+      </div>        
+    </div>
+    <!-- Container -->
+    <div id="container" class="container mob-container job">
+      <div class="grid_12 nav_all t-hide m-hide">
+        {$plugin:joblist:navigation}
+      </div>
+      <div class="grid_12 banners text-center">
+        {device:desktop}{$content:banner:static}{/device}
+        {device:mobile}{$content:banner:static}{/device}
+        {device:tablet}{$content:banner:static}{/device}
+      </div>
+      <!-- Content box -->
+      <div id="content" class="grid_9 job-container_block2">
+        <h1 class="grid_9 t-grid_4 m-grid_4 text-left h1_local">
+          <span>{$page:h1}</span>
+        </h1>
+        <div class="grid_2 mobil_select mt15px t-hide m-hide">
+          {$jsearch:filterbusiness:job}
+        </div>
+        <ul class="job-list list-unstyled grid_12">
+          {joblist:job-list-name-premium:tags:{$header:tags:readonly}:type:premium}
+          <div id="content" class="grid_12">
+            <li class="job-list-item {$company:type:readonly}clearfix listing">
+              <div class="{$mobile:device:mobile=grid_12:tablet,desktop=grid_3} t-grid_2 m-grid_1 left-column_listing">
+              <a href="{$page:url}">
+                {$directupload:{$job:id}:logo:420:placeholder}
+              </a>
+                <div class="t-grid_6 m-grid_4">                      
+                  <address class="font-SlabTallX company-address">
+                    <span><i class="icon-location icon16"></i></span>
+                    <div>
+                      {$job:city:readonly},
+                      {$job:region:readonly}
+                    </div>
+                  </address>
+                </div>    
+              </div>
+              <div class="{$mobile:device:mobile=grid_12:tablet,desktop=grid_9} t-grid_4  m-grid_3 list-item">
+                <a class="grid_8 t-grid_6 h2 primary2 block" href="{$page:url}">{$job:name:readonly}</a>
+                <div class="grid_3 t-grid_1 t-hide m-hide salary">{$job:salary:readonly}</div>
+                <div class="grid_12 t-grid_6 description-cut">{$job:description:readonly}</div>
+                <div class="grid_3 t-grid_1 m-grid_1 d-hide salary">{$job:salary:readonly}</div>
+                <div class="grid_4 t-grid_3 m-grid_3 data_job">{$job:updatedat:readonly}</div>
+                <a class="view_primary3_job t-hide m-hide" href="{$page:url}"> View more</a> 
+                <span class="clearfix"></span> 
+              </div>
+            </li>
+          </div>
+          {/joblist}
+        </ul>
+        {$content:content11}
+        {$content:content12}
+        <h2>{$header:content2}</h2>
+        {$content:content21}
+        {$content:content22}
+      </div>
+
+      <!-- Right box -->
+      <aside id="right" class="grid_3 t-hide m-hide">
+        <div class="aside-box">
+          <h3>{$header:right3:static}</h3>
+          {$content:right3:static}
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  {$template:_footer}
+
+  <!-- SCRIPTS ZONE -->
+  <script src="js/plugin/jquery.carousel.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-83332826-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script src="js/system/skeleton.min.js"></script>
+</body>
+</html>

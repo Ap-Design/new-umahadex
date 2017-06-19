@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<!--Head-->
+{$template:_head}
+
+<body class="{$mobile:device} index">
+   {$template:_header-mobile}
+   <!-- Header -->
+   {$template:_header}
+   
+   <!-- Container -->
+   <div class="wrapone home_page">
+    <div id="container" class="container containersearch">
+        <div class="serach-box grid_8 prefix_2 suffix_2">
+            <span class="title">
+                {$header:search}
+            </span>
+            {$jsearch:SearchForm}
+        </div>
+        <div class="grid_8 prefix_2 suffix_2 menu-box">
+            {$featuredonly:index}
+        </div> 
+    </div>
+    <div class="my-wrap-gallery pt10px pb20px">
+        <div  class="container">
+            
+            <!-- Content box -->
+            <div class="grid_9 t-hide m-hide slider_gold"> 
+                <div id="slider">
+                    <ul class="cycle-slideshow company-list list-unstyled golden" 
+                    data-cycle-slides="li"  
+                    data-cycle-fx="scrollHorz" 
+                    data-cycle-reverse="true" 
+                    data-cycle-max-z="10" 
+                    data-cycle-speed=1000 
+                    data-cycle-timeout=4000
+                    data-cycle-next="#next"
+                    data-cycle-prev="#prev"
+                    >
+                    {companylist:company-list-name-golden:tags:{$header:tags:readonly}:type:golden:without-error}
+                    <li class="company-list-item {$company:type:readonly} clearfix slide">
+                        <div class="{$mobile:device:mobile=grid_12:tablet,desktop=grid_3 contact-box}">
+                            <div class="company-img t-grid_2 m-grid_1">  
+                                {$directupload:{$company:id}:logo:220:placeholder} 
+                                {$content:best}
+                            </div>
+                            <div class="t-grid_4 m-grid_3">
+                                <a class="h3 primary2 block d-hide" href="{$page:url}">{$company:name:readonly}</a>
+                                <address class="font-SlabTallX company-address">
+                                    <i class="icon-location icon16"></i>
+                                    {$company:address:readonly}, 
+                                    {$company:zip:readonly} 
+                                    {$company:city:readonly}, 
+                                    {$company:region:readonly}
+                                    {$content:best}{$content:best2}{$content:best3}
+                                </address>
+                                <a class="btn primary2 mt15px {$mobile:device:mobile=block} d-hide" href="{$page:url}"> {$header:btn:static} </a>
+                                <span class="data_company  m-hide t-hide">
+                                    {$header:post:static} 
+                                    {$company:updatedat:readonly}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="{$mobile:device:mobile=grid_12:tablet,desktop=grid_9} m-hide t-hide">
+                            <a class="h1 primary2_gold block" href="{$page:url}">{$company:name:readonly}</a>
+                            <div class="grid_12 description-cut">{$company:description:readonly}</div>
+                            <span class="clearfix"></span> 
+                            <a class="btn primary2_view mt15px {$mobile:device:mobile=block}" href="{$page:url}"> {$header:btn:static} </a>                                
+                        </div>
+                    </li>
+                    {/companylist}
+                </ul>
+                <a class="button-slider prev icon-arrow-left6" id="prev"></a>
+                <a class="button-slider next icon-arrow-right6" id="next"></a>
+            </div>
+        </div>
+        <h2 class="grid_12 text-center h2_second">{$header:best}</h2>
+        <div class="grid_12 homepage_slider">
+            <ul id="lightSlider" class="lightSlider" >
+                <li>{$content:best}{$content:best2}{$content:best3}</li>
+                <li>{$content:block_21best}{$content:block_21best21}{$content:block_21best3}</li>
+                <li>{$content:block_31best}{$content:block_31best2}{$content:block_31best3}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div  class="container container-bg">
+    <!-- Content box -->
+    <div id="content" class="grid_12">
+        {$featuredonly:index2}
+    </div>
+</div>
+<div class="wrap-gray mb20px">
+    <div class="container">
+        <div class="grid_12 t-grid_6 brands">
+            <div id="content" class="grid_12"> 
+                {$content:content21}
+                {$content:content22}
+            </div>
+            <ul class="img_gallery {$mobile:device:mobile=carousel:tablet=carousel}" data-visible="3">
+                {repeat:name:key}
+                <li>{$imageonly:gallerykey:145}</li>
+                {/repeat}    
+            </ul>
+        </div>
+    </div>    
+</div>
+<div class="container mb20px">
+    <div class="grid_12 text-center banners">
+        {device:desktop}{$content:banner:static}{/device}
+        {device:mobile}{$content:banner-mob:static}{/device}
+        {device:tablet}{$content:banner-mob:static}{/device}
+    </div>
+</div>
+<div class="wrap">
+   <!-- Container -->
+   <div class="container"> 
+    <div class="grid_8 mb20px prefix_2 signupform">   
+        <div class="grid_10 mb20px prefix_1">   
+            <span class="title-big">
+                {$header:registr}
+            </span>
+            <span class="under-title-big grid_12">
+                {$header:registr2}
+            </span>                    
+        </div>
+        <div class="prefix_3 grid_6 ">
+            {$member:signup} 
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<!--Footer-->
+{device:desktop}
+<div>{$template:_footer}</div>
+{/device}
+
+{device:tablet}
+<div>{$template:_footertablet}</div>
+{$template:_footertablet}
+{/device}
+{device:mobile}
+<div>{$template:_footermobile}</div>
+{/device}
+
+<!-- SCRIPTS ZONE -->
+<script>
+    $(function(){
+        $('.seotoaster-signup p').each(function(){
+            var placeholder = $(this).find('label').text();
+            $(this).find('input').attr('placeholder', placeholder);
+        });
+        $('.carousel').data({
+            'visibletablet' : 3,
+            'visiblemobile' : 2
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#lightSlider").lightSlider(); 
+    });
+</script>
+<script src="js/system/flexkit.min.js"></script>
+</body>
+</html>

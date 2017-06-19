@@ -1,0 +1,128 @@
+.activate-color(@activate, @activate2) when (@activate = true) and (@activate2 = true){
+    .primary{
+        color : @primary-bg;
+
+        a&:hover{
+            color : darken(@primary-bg, 15%);
+        }
+    }
+    .activate-color-green(@activate) when (@activate = true){
+        .green{
+            color : @brand-green;
+
+            a&:hover{
+                color : darken(@brand-green, 15%);
+            }
+        }
+    }
+    .activate-color-orange(@activate) when (@activate = true){
+        .orange{
+            color : @brand-orange;
+
+            a&:hover{
+                color : darken(@brand-orange, 15%);
+            }
+        }
+    }
+    .activate-color-red(@activate) when (@activate = true){
+        .red{
+            color : @brand-red;
+
+            a&:hover{
+                color : darken(@brand-red, 15%);
+            }
+        }
+    }
+    .activate-color-blue(@activate) when (@activate = true){
+        .blue{
+            color : @brand-blue;
+
+            a&:hover{
+                color : darken(@brand-blue, 15%);
+            }
+        }
+    }
+    .activate-color-green(@activate-alternate-style-color-green);
+    .activate-color-orange(@activate-alternate-style-color-orange);
+    .activate-color-red(@activate-alternate-style-color-red);
+    .activate-color-blue(@activate-alternate-style-color-blue);
+}
+
+.activate-color(@activate-alternate-style-color, @activate-alternate-style);
+
+.larger{ font-size : @font-size-larger; }
+
+.large{ font-size : @font-size-large; }
+
+.small{ font-size : @font-size-small; }
+
+.mini{ font-size : @font-size-mini; }
+
+.btn.primary2{
+    background-color : #3398cc;
+    text-transform   : uppercase;
+    font-weight      : 900;
+    font-size        : @font-size-small;
+}
+//================
+//text-wrap
+@wrap-line-bg      : @content-bg;
+@wrap-line-color   : @gray-lighter;
+@wrap-line-length  : 0;
+// length lines (max 25%)
+@wrap-line-weight  : 4px;
+// line thickness
+@padding-vertical  : 0;
+@padding-horizontal: @padding-base-horizontal;
+
+.text-line{
+    position   : relative;
+    text-align : left;
+    //margin-bottom : 1.5em;
+
+    & > *{
+        margin     : 0;
+        background : @wrap-line-bg;
+        position   : relative;
+        z-index    : 1;
+        .inline-block(middle);
+        padding    : @padding-vertical @padding-horizontal;
+        //margin-left : 20px;
+    }
+
+    &:after{
+        content          : '';
+        position         : absolute;
+        z-index          : 0;
+        left             : @wrap-line-length;
+        right            : @wrap-line-length;
+        top              : 0;
+        bottom           : 0;
+        margin           : auto;
+        height           : @wrap-line-weight;
+        background-color : @wrap-line-color;
+    }
+    .wrap-new &{
+        text-align : center;
+        & > *{
+            background : transparent;
+        }
+        &:after{
+            background-color : @brand-primary;
+            width            : 25%;
+            left             : auto;
+        }
+        &:before{
+            content          : '';
+            position         : absolute;
+            z-index          : 0;
+            left             : @wrap-line-length;
+            top              : 0;
+            bottom           : 0;
+            margin           : auto;
+            height           : @wrap-line-weight;
+            background-color : @brand-primary;
+            width            : 25%;
+        }
+    }
+}

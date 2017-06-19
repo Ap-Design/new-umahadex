@@ -1,0 +1,220 @@
+// Base styles
+// --------------------------------------------------
+
+// Core styles
+button{
+    //color: #ffffff !important;
+    //background-color: @brand-primary !important;
+}
+.btn, button, [type="submit"]{
+    .button();
+
+    // Alternate buttons
+    // --------------------------------------------------
+    .activate-button-color(@globalButtonColor: @activate-alternate-style-button-color, @globalColor: @activate-alternate-style-color)when (@globalButtonColor = true) and (@globalColor = true){
+        // Inverse button appears as gray => primary
+        &.inverse{
+            .button-color(#fff, @gray-light, @gray-light, @primary-color, @primary-bg, @primary-bg, true, @activate-alternate-style-button-color-primary-inverse);
+        }
+
+        // Warning appears as orange
+        &.orange{
+            .button-color(@button-orange-color, @button-orange-bg, @button-orange-border, @activate-alternate-style-button-color-orange);
+        }
+
+        &.inverse-orange{
+            .button-color(#fff, @gray-light, @gray-light, @button-orange-color, @button-orange-bg, @button-orange-border, @activate-alternate-style-button-color-orange, @activate-alternate-style-button-color-orange-inverse);
+        }
+
+        // Danger and red appear as red
+        &.red{
+            .button-color(@button-red-color, @button-red-bg, @button-red-border, @activate-alternate-style-button-color-red);
+        }
+
+        &.inverse-red{
+            .button-color(#fff, @gray-light, @gray-light, @button-red-color, @button-red-bg, @button-red-border, @activate-alternate-style-button-color-red, @activate-alternate-style-button-color-red-inverse);
+        }
+
+        // Success appears as green
+        &.green{
+            .button-color(@button-green-color, @button-green-bg, @button-green-border, @activate-alternate-style-button-color-green);
+        }
+
+        &.inverse-green{
+            .button-color(#fff, @gray-light, @gray-light, @button-green-color, @button-green-bg, @button-green-border, @activate-alternate-style-button-color-green, @activate-alternate-style-button-color-green-inverse);
+        }
+
+        // Info appears as blue
+        &.blue{
+            .button-color(@button-blue-color, @button-blue-bg, @button-blue-border, @activate-alternate-style-button-color-blue);
+        }
+
+        &.inverse-blue{
+            .button-color(#fff, @gray-light, @gray-light, @button-blue-color, @button-blue-bg, @button-blue-border, @activate-alternate-style-button-color-blue, @activate-alternate-style-button-color-blue-inverse);
+        }
+    }
+    .activate-button-color();
+
+    // Button Sizes
+    // --------------------------------------------------
+    &.larger{
+        .button-size-larger();
+    }
+    &.large{
+        .button-size-large();
+    }
+    &.small{
+        .button-size-small();
+    }
+
+    // Block button
+    // --------------------------------------------------
+    .activate-type-button-block(@buttonBlock : @activate-alternate-style-button-type-block, @globalTypeButton : @activate-alternate-style-button-type)
+        when (@buttonBlock = true) and (@globalTypeButton = true)
+        {
+        &.block{
+            float         : none;
+            display       : block;
+            padding-left  : 0;
+            padding-right : 0;
+            width : 100%;
+
+            // Vertically space out multiple block buttons
+            &+.block{
+                margin-top : 0.5em;
+            }
+        }
+    }
+    .activate-type-button-block();
+
+    // Button with icon
+    // --------------------------------------------------
+    .activate-type-button-icon(@icon : @activate-toaster-icons, @buttonIcon : @activate-alternate-style-button-type-icon, @globalTypeButton : @activate-alternate-style-button-type)
+        when (@icon = true) and (@buttonIcon = true) and (@globalTypeButton = true)
+        {
+            &.icon{
+            .box-sizing(content-box);
+            .button-icon-size();
+
+            &:before{ margin : 0; }
+
+            &[class*="grid_"]{
+                padding-left  : 0;
+                padding-right : 0;
+            }
+
+            &.larger{
+                .button-icon-size(@icon-size-larger, larger);
+            }
+            &.large{
+                .button-icon-size(@icon-size-large, large);
+            }
+            &.small{
+                .button-icon-size(@icon-size-small, small);
+            }
+        }
+    }
+    .activate-type-button-icon();
+
+    // Button link
+    // --------------------------------------------------
+    .activate-type-button-link(@buttonLink : @activate-alternate-style-button-type-link, @globalTypeButton : @activate-alternate-style-button-type)
+        when (@buttonLink = true) and (@globalTypeButton = true)
+        {
+            &.link{
+                text-decoration : underline;
+                .link-color(@link-color, true);
+
+                &:hover, &:focus{
+                    color           : @link-color-hover;
+                    text-decoration : none;
+                }
+
+                // Alternate buttons
+                // --------------------------------------------------
+                .activate-color(@globalColor: @activate-alternate-style-button-color, @globalStyle: @activate-alternate-style) when (@globalColor = true) and (@globalStyle = true){
+                    &.inverse{
+                        .link-color(@text-color, @link-color, true, @activate-alternate-style-button-color-primary-inverse);
+                    }
+
+                    // Warning appears as orange
+                    &.orange{
+                        .link-color(@brand-orange, @activate-alternate-style-button-color-orange);
+                    }
+
+                    &.inverse-orange{
+                        .link-color(@text-color, @brand-orange, @activate-alternate-style-button-color-orange, @activate-alternate-style-button-color-orange-inverse);
+                    }
+
+                    // Danger and error appear as red
+                    &.red{
+                        .link-color(@brand-red, @activate-alternate-style-button-color-red);
+                    }
+
+                    &.inverse-red{
+                        .link-color(@text-color, @brand-red, @activate-alternate-style-button-color-red, @activate-alternate-style-button-color-red-inverse);
+                    }
+
+                    // Success appears as green
+                    &.green{
+                        .link-color(@brand-green, @activate-alternate-style-button-color-green);
+                    }
+
+                    &.inverse-green{
+                        .link-color(@text-color, @brand-green, @activate-alternate-style-button-color-green, @activate-alternate-style-button-color-green-inverse);
+                    }
+
+                    // Info appears as blue
+                    &.blue{
+                        .link-color(@brand-blue, @activate-alternate-style-button-color-blue);
+                    }
+
+                    &.inverse-blue{
+                        .link-color(@text-color, @brand-blue, @activate-alternate-style-button-color-blue, @activate-alternate-style-button-color-blue-inverse);
+                    }
+                }
+                .activate-color();
+            }
+        }
+    .activate-type-button-link();
+}
+
+.activate-button-3d(@button3D : @activate-alternate-style-button-type-3d, @globalTypeButton : @activate-alternate-style-button-type)
+    when (@button3D = true) and (@globalTypeButton = true)
+    {
+        &.btn-3d{
+            .button-3d(@button-primary-color, @button-primary-bg, @button-primary-border);
+        }
+    }
+.activate-button-3d();
+
+// Button group
+// --------------------------------------------------
+.activate-type-button-group(@activate, @activate2) when (@activate = true) and (@activate2 = true){
+    [class*="ui-buttonset"], .btn-set, .btn-group{
+        overflow : hidden;
+        .inline-block();
+
+        .ui-button, .btn{
+            float : left;
+
+            &~.btn{
+                margin-left : 1px;
+            }
+        }
+
+        [type="radio"], [type="checkbox"]{
+            &+.ui-button, &+.btn{
+            }
+
+        }
+
+        input:checked{
+            &+.ui-button, &+.btn{
+                .opacity(0.5);
+            }
+
+        }
+    }
+}
+.activate-type-button-group(@activate-alternate-style-button-type, @activate-alternate-style);

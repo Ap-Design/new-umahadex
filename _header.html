@@ -1,0 +1,100 @@
+<!-- Header -->
+            <header>
+                <div class="container">
+                    <div class="grid_1 drop-box-menu">
+                        <div>
+                           <i class="btn action-btn menu-btn fa fa-bars" aria-hidden="true"></i>
+                            <nav id="flat-menu" class="drop-menu">
+                                {$menu:flat}
+                            </nav>
+                        </div>
+                    </div>
+
+                    <h1 class="logo grid_3 suffix_1 prefix_1">
+                        <a href="{$website:url}" title="{$page:h1}">
+                            <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">
+                        </a>
+                    </h1>
+                    
+                    <!--<div class="grid_1">
+                        {$plugin:joblist:navigation}
+                    </div>-->
+                    <!-- Main Menu -->
+                    <!--nav id="main-menu" class="grid_8 mt15px mb20px">{$ menu:main:main_menu}</nav-->
+                    
+                        {memberonly}
+                         <div class="grid_1 dashboard prefix_1">
+                            <div>
+                            
+                            <a href="/dashboard.html">
+                            <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            <span>Dashboard</span>
+                            </a>
+                            </div>
+                        </div>
+                         {/memberonly}
+                    
+                    
+                    <div>
+                        {memberonly}
+                         <div class="grid_1 drop-headermenu suffix_1">
+                          <div>
+                            <span class="icon-user"></span>
+                            <span>My profile</span>
+                            <nav id="flat-menu" class="drop-header">
+                               <span class="loginprof">{$user:name}</span>
+                               {$featuredonly:header-member:static}{$member:logout}
+                            </nav>
+                        </div>
+                    </div>
+                    {/memberonly}
+                    </div>
+                    
+                    <!-- Sing up -->
+                    <div class="prefix_2 grid_2 login-box   {memberonly}hidden{/memberonly}">
+                        {memberonly}
+                            <!--{$header:logout:static}-->
+                            {$user:name}
+                           <!--<a href="/member-landing-page.html" class="action-btn login-menu-btn icon-user btn"></a>-->
+                           <a href="/index.html">
+                            {$member:logout}</a>
+                        {/memberonly}
+                        <a href="/login.html"><span class="icon-user"></span></a>
+                        <a class="login-btn action-btn {$prepop:action-btnBG-key1:select:static:readonly} {$prepop:action-btnSize-key1:select:static:readonly}" href="{$prepop:action-btnLink-key1:text:static:readonly}">{$prepop:action-btnText-key1:text:static:readonly}</a>
+                        {adminonly}
+                            <span class="icon-cog dialog btn icon inverse tooltip top" title="Click to edit button style" data-class="blue" data-element=".action-button_key" data-width="300"></span>
+                            <div class=" hide settings action-button_key" title="Edit button style">
+                                <label>Enter button text</label>
+                                {$prepop:action-btnText-key1:text:static}
+                                <label class="mt10px">Enter button link</label>
+                                {$prepop:action-btnLink-key1:text:static}
+                                <label class="mt10px">Choose button color</label>
+                                {$prepop:action-btnBG-key1:select:seosamba-color|seotoaster-color|inverse|orange|orange-dark|orange-inverse|red|red-dark|red-inverse|blue|blue-dark|blue-inverse|green|green-dark|green-inverse:static}
+                                <label class="mt10px">Choose button size</label>
+                                {$prepop:action-btnSize-key1:select:larger|large|normal|small:static}
+                            </div>
+                        {/adminonly}
+                        <!--a class="singin-btn " href="#">Sing in</a--> 
+                        
+                        <!--<a class="singin-btn action-btn {$prepop:action-btnBG-key2:select:static:readonly} {$prepop:action-btnSize-key2:select:static:readonly}" href="{$prepop:action-btnLink-key2:text:static:readonly}">{$prepop:action-btnText-key2:text:static:readonly}</a>-->
+                            {adminonly}
+                            <span class="icon-cog dialog btn icon inverse tooltip top" title="Click to edit button style" data-class="blue" data-element=".action-button_key" data-width="300"></span>
+                            <div class="hide settings action-button_key" title="Edit button style">
+                                <label>Enter button text</label>
+                                {$prepop:action-btnText-key2:text:static}
+                                <label class="mt10px">Enter button link</label>
+                                {$prepop:action-btnLink-key2:text:static}
+                                <label class="mt10px">Choose button color</label>
+                                {$prepop:action-btnBG-key2:select:seosamba-color|seotoaster-color|inverse|orange|orange-dark|orange-inverse|red|red-dark|red-inverse|blue|blue-dark|blue-inverse|green|green-dark|green-inverse:static}
+                                <label class="mt10px">Choose button size</label>
+                                {$prepop:action-btnSize-key2:select:larger|large|normal|small:static}
+                            </div>
+                            {/adminonly}
+                    </div>
+                    
+                    <div class="grid_2">
+                        <a href="/login.html" class="{memberonly}hidden{/memberonly} post-ad"><span>Post Ad</span></a>
+                        {memberonly}<a href="/postad.html" class="post-ad"><span>Post Ad</span></a>{/memberonly}
+                    </div>
+                </div>
+            </header>

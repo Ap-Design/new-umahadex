@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<!--Head-->
+{$template:_head}
+
+<body class="bodydashboard">
+
+    {$template:_header-mobile}
+    
+    
+    <!-- Header -->
+    {$template:_header}
+    
+    <!-- Container -->
+    <div class="wrapone">
+        <div id="container" class="container dashboard">
+            <h1 class="grid_12 text-center mt20px">{$page:h1}</h1>
+            
+            <!-- Content box -->
+            <div>
+                {memberonly}
+                <aside id="left" class="grid_3 t-hide m-hide">
+                    <div class="box">
+                        <nav id="flat-menu" class="drop-header">
+                            <span class="loginprof">{$user:name}</span>
+                            {$featuredonly:header-member:static}{$member:logout}
+                        </nav>
+                        
+                        
+                    </div>
+                    <div class="box2">
+                        <div>
+                            <a class="page-teaser-image" href="http://new.umahadex.com/plans.html"><img alt="Plans" src="http://new.umahadex.com/previews/plans.jpg"></a>
+                            <span>Premium Services</span>
+                            <span>Promote your ads,<br>jobs and company
+                            </span>
+                        </div>
+                        <div><a class="upgrade" href="http://new.umahadex.com/plans.html">Read more</a></div>
+                        
+                    </div>
+                </aside>
+                {/memberonly}
+            </div>
+            
+            <div id="content" class="grid_9 inner-page bodydashboard dashboard-container">
+                {$content:grid_data}
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    {device:desktop}
+    <div>{$template:_footer}</div>
+    {/device}
+    
+    {device:tablet}
+    <div>{$template:_footertablet}</div>
+    {$template:_footertablet}
+    {/device}
+    
+    {device:mobile}
+    <div>{$template:_footermobile}</div>
+    {/device}
+
+    <!-- SCRIPTS ZONE -->
+    <script src="js/scripts.min.js"></script>
+    <!--script src="js/system/skeleton.min.js"></script-->
+    <script src="js/system/flexkit.min.js"></script>
+    
+</body>
+</html>

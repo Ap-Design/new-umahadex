@@ -1,0 +1,50 @@
+<div class="wrapone">
+            
+        <!-- Container -->
+        <div id="container" class="container">
+        <div class="sl-container">
+            
+            <!-- left box -->
+            <aside id="left" class="grid_6 t-hide m-hide login-size">
+                <div>
+                    <h1>{$page:h1}</h1>
+                </div>
+                <div class="aside-box log-in">
+                    {$auth:facebook}
+                </div>
+            </aside>
+             <aside id="left" class="grid_6 d-hide login-size">
+                
+                <div class="aside-box log-in">
+                    {$auth:facebook}
+                </div>
+                <div>
+                    <p>Or sign in with your details</p>
+                </div>
+            </aside>
+           
+            
+             <!-- Content box -->
+            <div id="content" class="grid_5 prefix_1inner-page">
+                <div class="login-in">
+                {$content:grid_data}
+                {$content:regbutton}
+
+                <!--{ $content:content11}
+                <!--{$ content:content12}
+                <h2>{$ header:content2}</h2>
+                {$ content:content21}
+                {$ content:content22}-->
+                </div>
+            </div>
+        
+        </div>
+        <div class="container grid_12 btbyregister">
+                <a class="registeraccount" href="/sign-in.html"><span>Don't have an account?</span> <span>Register</span></a>
+        </div>
+        </div>
+
+
+
+        </div>
+        </div>

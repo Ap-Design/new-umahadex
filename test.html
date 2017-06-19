@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>{$page:title}</title>
+        <meta name="keywords" content="{$meta:keywords}">
+        <meta name="description" content="{$meta:description}">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <!-- CSS -->
+        {concatcss}
+        <link href="css/skeleton-ui.css" rel="stylesheet" media="screen">
+        {/concatcss}
+
+        <!-- HTML5shiv and selectivizr.js IE support of HTML5 elements and CSS3 pseudo-classes, attribute selectors -->
+        <!--[if lt IE 9]><script src="js/system/ie-pack.js"></script><![endif]-->
+
+    </head>
+    <body class="{$mobile:device}">
+        <div id="carousel-mobile" class="carousel" 
+            data-scrolling="false"
+            data-visible="1"
+            >
+            <img src="http://placehold.it/150x150">
+            <img src="http://placehold.it/150x200">
+            <img src="http://placehold.it/150x175">
+            <img src="http://placehold.it/150x250">
+            <img src="http://placehold.it/150x150">
+            <img src="http://placehold.it/150x150">
+            <img src="http://placehold.it/150x150">
+        </div>
+
+        <!-- SCRIPTS ZONE -->
+        <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
+        <script src="js/plugin/jquery.carousel.min.js"></script>
+        <script src="js/system/skeleton.min.js"></script>
+        <script>
+            $(function(){
+                var myElement = document.getElementById('carousel-mobile');
+                var hammertime = new Hammer(myElement);
+                hammertime.on('swipeleft', function(ev) {
+                            $('.next').click();
+                }).on('swiperight', function(ev) {
+                    $('.prev').click();
+                });
+            });
+        </script>
+    </body>
+</html>

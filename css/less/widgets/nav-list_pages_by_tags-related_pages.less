@@ -1,0 +1,303 @@
+// Table of Content
+//==================================================
+//  Featured Areas & Featured Pages & Related Pages
+//	Featured Areas
+//	Featured Pages
+//	Related Pages
+//==================================================
+
+// Featured Areas & Featured Pages & Related Pages
+//==================================================
+.featureditem, .relatedpages{ }
+
+.featureapage, .featureditem li, .relatedpages li{
+    .grid-elements(3, @grid-margin-width, true, 1, 1);
+    margin-bottom : 30px;
+    @media only screen and (max-width : @responsive-size-tablet){
+        margin-left                   : 0;
+    }
+    a{ }
+
+    .page-teaser-image{
+        @media only screen and (max-width : @responsive-size-tablet){
+            float                         : left;
+            width                         : 25%;
+        }
+        overflow : hidden;
+        //margin-bottom : 0.5em;
+
+        img{
+        }
+    }
+
+    .page-title{
+        margin : 0;
+    }
+
+    span, p{ }
+
+    &:hover{
+
+        a{ }
+
+        .page-teaser-image{
+            img{ }
+        }
+
+        .page-title{
+            background-color : #3398cc;
+            color            : #fff;
+        }
+
+        span, p{ }
+    }
+}
+
+.featureditem span, .featureapage p, .relatedpages span{ }
+
+// Featured Areas
+//==================================================
+.featureditem{
+
+    li{
+        border : 1px solid #dcdedd;
+    }
+
+    a{ }
+
+    .page-teaser-image{
+
+        img{ }
+    }
+
+    .page-title{
+        text-align       : center;
+        background-color : #f9f9f9;
+        padding          : 20px 0;
+    }
+
+    span{ }
+
+    li:hover{
+
+        a{ }
+
+        .page-teaser-image{
+            img{ }
+        }
+
+        .page-title{ }
+
+        span{ }
+    }
+    &#index{
+        margin-bottom : 50px;
+        li{
+            border : none;
+            .rgba(#3e4859, 0.35);
+            &:hover{
+                background-color : #2db588;
+            }
+            @media only screen and (max-width : @responsive-size-tablet){
+                margin-bottom                 : 15px;
+            }
+        }
+        .page-teaser-image{
+            padding : 20px 55px 0;
+            @media only screen and (max-width : @responsive-size-tablet){
+                padding                       : @grid-margin-width;
+            }
+        }
+        .page-title{
+            background-color : transparent;
+            color            : #fff;
+            font-weight      : 800;
+            padding          : 10px 0;
+            position         : relative;
+            @media only screen and (max-width : @responsive-size-tablet){
+                padding                       : 6% 15% 6% 0;
+                &:before{
+                    content        : "\e0c8";
+                    font-family    : 'toaster-icons';
+                    speak          : none;
+                    font-style     : normal;
+                    font-weight    : normal;
+                    text-transform : none;
+                    text-align     : center;
+                    position       : absolute;
+                    right          : 5%;
+                    top            : 35%;
+                }
+            }
+        }
+
+    }
+    &#index_2{
+        @media only screen and (max-width : @responsive-size-tablet){
+            display                       : none;
+        }
+        li{
+            border  : none;
+            padding : 0 20px;
+            .page-title{
+                background-color : transparent;
+                color            : @text-color;
+            }
+            &:hover{
+                .page-title{
+                    background-color : transparent;
+                    color            : @brand-primary;
+                }
+            }
+        }
+    }
+    footer &{
+        li{
+            width  : 100%;
+            margin : 0 0 10px 0;
+            border : none;
+        }
+
+        a{ }
+
+        .page-teaser-image{
+            img{ }
+        }
+
+        .page-title{
+            text-align : left;
+            padding    : 0;
+            font-size  : 15px;
+            color      : @text-color;
+        }
+
+        span{ }
+
+        li:hover{
+
+            a{ }
+
+            .page-teaser-image{
+                img{ }
+            }
+
+            .page-title{
+                color            : @brand-primary;
+                background-color : transparent;
+            }
+
+            span{ }
+        }
+        @media only screen and (max-width : @responsive-size-tablet){
+            &.show{
+                display : block;
+                li{
+                    margin-bottom : 20px;
+                }
+                .page-title{
+                    text-align : center;
+                }
+            }
+        }
+    }
+    aside &{
+        li{
+            border  : none;
+            display : block;
+            width   : 100%;
+        }
+
+        a{ }
+
+        .page-teaser-image{
+            float        : left;
+            margin-right : 5px;
+
+            img{ }
+        }
+
+        .page-title{
+            overflow         : hidden;
+            text-align       : left;
+            background-color : transparent;
+            line-height      : 1.5;
+            font-size        : 1em;
+            padding          : 0;
+        }
+
+        span{ }
+
+        li:hover{
+
+            a{ }
+
+            .page-teaser-image{
+                img{ }
+            }
+
+            .page-title{
+                color            : darken(#199bef, 10%);
+                background-color : transparent;
+            }
+
+            span{ }
+        }
+    }
+}
+
+// Featured Pages
+//==================================================
+.featureapage{
+    float : left;
+    .grid-elements(3, @grid-margin-width);
+
+    a{ }
+
+    .page-teaser-image{
+        img{ }
+    }
+
+    .page-title{ }
+
+    p{ }
+
+    &:hover{
+        a{ }
+
+        .page-teaser-image{
+            img{ }
+        }
+
+        .page-title{ }
+
+        p{ }
+    }
+}
+
+// Related Pages
+//==================================================
+.relatedpages{
+    li{ }
+
+    a{ }
+
+    .page-teaser-image{
+        img{ }
+    }
+
+    .page-title{ }
+
+    span{ }
+
+    li:hover{
+        a{ }
+
+        .page-teaser-image{
+            img{ }
+        }
+
+        .page-title{ }
+
+        span{ }
+    }
+}

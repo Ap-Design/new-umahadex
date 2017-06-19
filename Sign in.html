@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<!--Head-->
+{$template:_head}
+
+<body class="{$mobile:device}">
+    {$template:_header-mobile}
+    <!-- Header -->
+    {$template:_header}
+    
+    <div class="wrapone"> 
+        <!-- Container -->
+        <div id="container" class="container">
+           <div class="ss-container">
+               
+            <!-- Content box -->
+            <div id="content" class="grid_6 inner-page sign-size">
+                <h1 class="h1_signin">{$page:h1}</h1>
+                <div class="login-in">
+                    {$content:grid_data}
+                    {$content:regbutton}
+                </div>
+            </div>
+            <!-- Right box -->
+            <aside id="right" class="grid_5">
+                <div class="aside-box sign-in">
+                    {$content:sociallogin}  
+                    {$auth:facebook}
+                </div>
+            </aside>
+        </div>
+
+    </div>
+</div>   
+
+<!--Footer-->
+{device:desktop}
+<div>{$template:_footer}</div>
+{/device}
+
+{device:tablet}
+<div>{$template:_footertablet}</div>
+{$template:_footertablet}
+{/device}
+
+{device:mobile}
+<div>{$template:_footermobile}</div>
+{/device}
+
+
+<!-- SCRIPTS ZONE -->
+<script src="js/scripts.min.js"></script>
+<!--script src="js/system/skeleton.min.js"></script-->
+<script src="js/system/flexkit.min.js"></script>
+</body>
+</html>

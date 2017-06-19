@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>{$page:title}</title>
+        <meta name="keywords" content="{$meta:keywords}">
+        <meta name="description" content="{$meta:description}">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes"> <!-- open in full-screen, hide URL bar (for IOS)-->
+
+        <!-- Favicons -->
+        <link rel="icon" href="images/favicon.ico">
+        <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
+        <link rel="apple-touch-icon" href="images/apple-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+
+        <!-- CSS -->
+        {concatcss}
+        <link href="css/reset.css" rel="stylesheet" media="screen">
+        <link href="css/content.css" rel="stylesheet" media="screen">
+        <link href="css/nav.css" rel="stylesheet" media="screen">
+        <link href="css/style.css" rel="stylesheet" media="screen">
+        <!-- Shopping css -->
+        <link href="css/store.css" rel="stylesheet" media="screen">
+        <!-- Additional css -->
+        <link href="css/skeleton-ui.css" rel="stylesheet" media="screen">
+        <link href="css/animation.css" rel="stylesheet" media="screen">
+        {/concatcss}
+
+        <!-- HTML5shiv and selectivizr.js IE support of HTML5 elements and CSS3 pseudo-classes, attribute selectors -->
+        <!--[if lt IE 9]><script src="js/system/ie-pack.js"></script><![endif]-->
+
+    </head>
+    <body class="{$mobile:device}">
+     {$template:_header-mobile}
+        <!-- Container -->
+        <div id="container" class="container">
+
+            <!-- Header -->
+            <header>
+                <div class="container">
+                    <div class="grid_4 drop-box-menu">
+                        <span class="action-btn menu-btn icon-list2 btn"></span>
+                        <div class="drop-menu">
+                            <div>
+                                {$header:header1:static}
+                            </div>
+                            <ul class="language">
+                                <li>
+                                    <a href="#">English</a>
+                                </li>
+                                <li>
+                                    <a href="#">Russian</a>
+                                </li>
+                            </ul>
+                            <div>
+                                {$header:header2:static}
+                            </div>
+                            <div class="carrency">
+                                {$jcurrency:currency}
+                            </div>
+                        </div>    
+                    </div>
+                    
+                    <h1 class="logo grid_4">
+                        <a href="{$website:url}" title="{$page:h1}">
+                            <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">
+                        </a>
+                    </h1>
+
+                    <!-- Main Menu -->
+                    <!--nav id="main-menu" class="grid_8 mt15px mb20px">{$ menu:main:main_menu}</nav-->
+                    
+                    <!-- Sing up -->
+                    <div class="grid_4 login-box">
+                        {memberonly}
+                            {$header:logout:static}
+                            {$user:name}
+                            <a href="/member-landing-page.html" class="action-btn login-menu-btn icon-user btn"></a>
+                            {$member:logout}
+                        {/memberonly}
+                        <a class="login-btn action-btn {$prepop:action-btnBG-key1:select:static:readonly} {$prepop:action-btnSize-key1:select:static:readonly}" href="{$prepop:action-btnLink-key1:text:static:readonly}">{$prepop:action-btnText-key1:text:static:readonly}</a>
+                        {adminonly}
+                            <span class="icon-cog dialog btn icon inverse tooltip top" title="Click to edit button style" data-class="blue" data-element=".action-button_key" data-width="300"></span>
+                            <div class="hidden settings action-button_key" title="Edit button style">
+                                <label>Enter button text</label>
+                                {$prepop:action-btnText-key1:text:static}
+                                <label class="mt10px">Enter button link</label>
+                                {$prepop:action-btnLink-key1:text:static}
+                                <label class="mt10px">Choose button color</label>
+                                {$prepop:action-btnBG-key1:select:seosamba-color|seotoaster-color|inverse|orange|orange-dark|orange-inverse|red|red-dark|red-inverse|blue|blue-dark|blue-inverse|green|green-dark|green-inverse:static}
+                                <label class="mt10px">Choose button size</label>
+                                {$prepop:action-btnSize-key1:select:larger|large|normal|small:static}
+                            </div>
+                        {/adminonly}
+                        <!--a class="singin-btn " href="#">Sing in</a-->  
+                        <a class="singin-btn action-btn {$prepop:action-btnBG-key2:select:static:readonly} {$prepop:action-btnSize-key2:select:static:readonly}" href="{$prepop:action-btnLink-key2:text:static:readonly}">{$prepop:action-btnText-key2:text:static:readonly}</a>
+                            {adminonly}
+                            <span class="icon-cog dialog btn icon inverse tooltip top" title="Click to edit button style" data-class="blue" data-element=".action-button_key" data-width="300"></span>
+                            <div class="hidden settings action-button_key" title="Edit button style">
+                                <label>Enter button text</label>
+                                {$prepop:action-btnText-key2:text:static}
+                                <label class="mt10px">Enter button link</label>
+                                {$prepop:action-btnLink-key2:text:static}
+                                <label class="mt10px">Choose button color</label>
+                                {$prepop:action-btnBG-key2:select:seosamba-color|seotoaster-color|inverse|orange|orange-dark|orange-inverse|red|red-dark|red-inverse|blue|blue-dark|blue-inverse|green|green-dark|green-inverse:static}
+                                <label class="mt10px">Choose button size</label>
+                                {$prepop:action-btnSize-key2:select:larger|large|normal|small:static}
+                            </div>
+                            {/adminonly}
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Menu -->
+            <nav id="main-menu" class="grid_12 mt15px mb30px">{$menu:main:main_menu}</nav>
+            
+            <h1 class="grid_12 light">{$page:h1}</h1>
+            
+            <hr class="grid_12">
+
+            <!-- Content box -->
+            <div id="content" class="grid_12 page404">
+                <div class="grid_6 alpha">404</div>
+                <div class="grid_6 omega">
+                    {$content:404:static}<br>
+                    <a class="btn inverse large" href="{$website:url}" title="{$header:button:readonly}">{$header:button:static}</a>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt30px">
+
+            <!-- Container -->
+            <div class="container">
+                <div class="footer-box grid_3">
+                    <h3>{$header:footer1:static}</h3>
+                    {$content:footer1:static}
+                </div>
+                <div class="footer-box grid_3">
+                    <h3>{$header:footer2:static}</h3>   
+                    {$content:footer2:static} 
+                </div>
+                <div class="footer-box grid_3">
+                    <h3>{$header:footer3:static}</h3>
+                    {$content:footer3:static}
+                </div>
+                <div class="footer-box grid_3">
+                    <h3>{$header:footer4:static}</h3>
+                    {$content:footer4:static}
+                </div>
+
+                <hr class="grid_12">
+
+                <!-- Footer info -->
+                <div class="grid_4 text-left">{$content:footer-info:static}</div>
+
+                <!-- Flat Menu -->
+                <nav id="flat-menu" class="grid_8 text-right">{$menu:flat}</nav>
+
+            </div>
+
+        </footer>
+
+        <!-- SCRIPTS ZONE -->
+        <script>
+            $(function(){
+            });
+        </script>
+        <script src="js/scripts.min.js"></script>
+        <script src="js/system/skeleton.min.js"></script>
+    </body>
+</html>

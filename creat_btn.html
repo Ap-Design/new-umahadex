@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <!--Head-->
+        {$template:_head}
+        
+    <body class="{$mobile:device}">
+{$template:_header-mobile}
+         <!-- Header -->
+            {$template:_header}
+            
+        <!-- Container -->
+        <div class="wrapone">
+        <div id="container" class="container">
+        
+            
+            <!-- Content box -->
+            <div id="content" class="grid_12 inner-page">
+                <h1 class="grid_12 mt30px">{$page:h1}</h1>
+                {$content:content11}
+                {$content:content12}
+                <h2>{$header:content2}</h2>
+                <div class="grid_12 mt30px">
+                <ul class="create_new" id="create_newsad">
+                <li>
+                    <a class="creat_ad_img" href="http://new.umahadex.com/dashboard.html#joblist-grid-tabs-company">{$imageonly:rrr:100}</a>
+                    <a href="http://new.umahadex.com/dashboard.html#joblist-grid-tabs-company" title="Local Businesses Around you" class="creat_ad mt20px">Create Company</a>
+                </li>
+                
+                
+                <li>
+                    <a class="creat_ad_img" href="http://new.umahadex.com/dashboard.html#joblist-grid-tabs-job">{$imageonly:rr1:100}</a>
+                    <a href="http://new.umahadex.com/dashboard.html#joblist-grid-tabs-job" title="Jobs" class="creat_ad mt20px">Create Job</a>
+                </li>
+                <li>
+                
+                    <a class="creat_ad_img" href="http://new.umahadex.com/dashboard.html#joblist-grid-tabs-adv">{$imageonly:rr2:100}</a>
+                    <a href="http://new.umahadex.com/dashboard.html#joblist-grid-tabs-adv" title="Go to Ads" class="creat_ad mt20px">Create Ads</a>
+                </li>
+                </ul>
+            </div> 
+            </div>
+
+          <!-- Right box
+            <aside id="right" class="grid_3 t-hide m-hide">
+                <div class="aside-box">
+                    <h3>{$header:right1:static}</h3>  
+                    {$content:right1:static}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:right2}</h3>
+                    {$content:right2}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:right3}</h3>
+                    {$content:right3}
+                </div>
+            </aside> -->
+
+        </div>
+        </div>
+        <!--Footer-->
+        {device:desktop}
+            <div>{$template:_footer}</div>
+        {/device}
+        
+        {device:tablet}
+            <div>{$template:_footertablet}</div>
+        {$template:_footertablet}
+        {/device}
+        
+        {device:mobile}
+            <div>{$template:_footermobile}</div>
+        {/device}
+
+        <!-- SCRIPTS ZONE -->
+        <script>
+            $(function(){
+                
+            });
+        </script>
+        <script src="js/scripts.min.js"></script>
+        <!--script src="js/system/skeleton.min.js"></script-->
+        <script src="js/system/flexkit.min.js"></script>
+        </body>
+</html>

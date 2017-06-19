@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <!--Head-->
+        {$template:_head}
+    
+    <body class="{$mobile:device}">
+
+      {$template:_header-mobile}
+         <!-- Header -->
+           {$template:_header}
+           
+        <div class="wrapone background_conc">
+        <div id="container" class="container">
+        
+            
+            <!-- Content box -->
+            <div id="content" class="grid_12 inner-page background_conc">
+               <div class="login-box-container">
+        <div class="login-bo center-box">
+            <span class="login-box-top"></span>
+            <div id="account-attributes-challenge">
+    <form class="pure-form pure-form-stacked oneid-form-background success-form" method="post">
+        <input type="hidden" value="VzIxjIVeV2J" name="crumb" data-rapid_p="1">
+        <input type="hidden" value="qcDPpbhP" name="acrumb" data-rapid_p="2">
+        <div class="oneid-container">
+            <div class="oneid-vertically-centered">
+                <div class="oneid-icon-tick"></div>
+                <h1 class="success-header-text">Congratulations!</h1>
+                <p class="success-page-message">You are the proud owner of a brand new Umahadex&nbsp;account</p>
+            </div>
+             <div class="reg-wait-spinner"></div> 
+            <div class="button-container mail-button-wait">
+               <a href="http://new.umahadex.com/login.html" class="pure-button puree-button-primary puree-spinner-button" >
+                        Let’s get&nbsp;started</a> 
+            </div>
+        </div>
+    <input type="hidden" data-name="alt-submit"></form>
+</div>
+
+        </div>
+    </div>
+
+          <!-- Right box
+            <aside id="right" class="grid_3 t-hide m-hide">
+                <div class="aside-box">
+                    <h3>{$header:right1:static}</h3>  
+                    {$content:right1:static}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:right2}</h3>
+                    {$content:right2}
+                </div>
+                <div class="aside-box">
+                    <h3>{$header:right3}</h3>
+                    {$content:right3}
+                </div>
+            </aside> -->
+
+        </div>
+        </div>
+        <!--Footer-->
+        {device:desktop}
+            <div>{$template:_footer}</div>
+        {/device}
+        
+        {device:tablet}
+            <div>{$template:_footertablet}</div>
+        {$template:_footertablet}
+        {/device}
+        
+        {device:mobile}
+            <div>{$template:_footermobile}</div>
+        {/device}
+
+        <!-- SCRIPTS ZONE -->
+        <script>
+            $(function(){
+                var $tab=$(".tab"),
+                $tab_li=$(".tab_nav li");
+                $tab.hide();
+                $tab_li.first().addClass("activ").show();
+                $tab.first().show();
+                $tab_li.click( function() {
+                     $tab_li.removeClass("activ");
+                     $(this).addClass("activ");
+                     $tab.hide();
+                     var a = $tab_li.index(this);
+                     $tab.eq(a).show()
+                });
+            });
+        </script>
+        <script src="js/scripts.min.js"></script>
+        <script src="js/system/skeleton.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>{$page:title}</title>
+        <meta name="keywords" content="{$meta:keywords}">
+        <meta name="description" content="{$meta:description}">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes"> <!-- open in full-screen, hide URL bar (for IOS)-->
+    <meta name="google-site-verification" content="eZaWS03csuUtzOAYZ8SSqgpcUCR9zIKSHjIYuev3We4" />
+        <!-- Favicons -->
+        <script type="text/javascript">
+          $(function(){
+              var listItems = $('.adv-list-item');
+              $.each(listItems, function(id, item){
+                var listingElemUrl = $(this).find('.primary2').attr('href');
+                $(this).find('a').removeClass('_lbox','direct-upload');
+              });
+          });
+      </script>
+        <script type="text/javascript">
+          $(function(){
+              var listItems = $('.adv-list-item');
+              $.each(listItems, function(id, item){
+                var listingElemUrl = $(this).find('.primary2').attr('href');
+                $(this).find('a').attr('href', listingElemUrl);
+              });
+          });
+      </script>
+        <link rel="icon" href="images/favicon.ico">
+         <link href='http://fonts.googleapis.com/css?family=Open+Sans:200,400,700|Roboto:300,400,500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' media="screen">
+        <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
+        <link rel="apple-touch-icon" href="images/apple-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <!-- CSS -->
+        <link type="text/css" rel="stylesheet" href="css/lightslider.css" /> 
+       {concatcss}
+<link href="css/reset.css" rel="stylesheet" media="all">
+<link href="css/content.css" rel="stylesheet" media="all">
+<link href="css/nav.css" rel="stylesheet" media="all">
+<link href="css/style.css" rel="stylesheet" media="all">
+<!-- Additional css -->
+{/concatcss}
+
+        <!-- HTML5shiv and selectivizr.js IE support of HTML5 elements and CSS3 pseudo-classes, attribute selectors -->
+        <!--[if lt IE 9]><script src="js/system/ie-pack.js"></script><![endif]-->
+    
+ <!--Logout then redirect on proper page-->
+
+
+      <script src="js/lightslider.js"></script>
+      
+
+    </head>
+    <body>
+
+      {$template:_header-mobile}
+         <!-- Header -->
+           {$template:_header}
+           <div class="wrapone adv">
+            <div class="inner-search-box">
+                <div class="container">
+                
+                    <div class="grid_3 t-hide m-hide">{$header:search-company:static}</div>
+                    {$template:_jsearchforms}   
+                    
+                </div>        
+            </div>
+        <!-- Container -->
+        <div id="container" class="container mob-container">
+        <div class="grid_12 nav_all t-hide m-hide">
+                {$plugin:joblist:navigation}
+            </div>
+            <div class="grid_12 banners text-center">
+                <!--{$ imageonly:banner3:940:static}-->
+                {device:desktop}{$content:banner:static}{/device}
+                {device:mobile}{$content:banner:static}{/device}
+                {device:tablet}{$content:banner:static}{/device}
+            </div>
+            <h1 class="grid_9 t-grid_4 m-grid_4 text-left h1_local">
+                <span>{$page:h1}</span>
+            </h1>
+            <div class="grid_2 t-hide m-hide mt20px mobil_select">
+                {$jsearch:filterbusiness:adv}
+            </div>
+            <!-- Content box -->
+            <div id="content" class="grid_9"> 
+               
+                
+                <ul class="adv-list list-unstyled">
+                {advlist:adv-list-name-free:tags:{$header:tags:readonly}:type:premium:limit:10}
+                    <li class="adv-list-item {$company:type:readonly} clearfix" id="adv-listing">
+                        <div class="adv-img grid_4 t-grid_2 my_m-grid_leftc">
+                        <a href="{$page:url}">
+                        {$directupload:{$adv:id}:logo:220:placeholder}
+                        </a>
+                        </div>
+                        <div class="right_adv_block grid_8 t-grid_4 my_m-grid_leftr">
+                            <a class="h3 primary2 block" href="{$page:url}">{$adv:name:readonly}</a>
+                            <div class="grid_12 t-grid_5 my_m-grid_3 adv-box">
+                                <p class="grid_6 t-grid_4 m-grid_3 name_user_post">
+                                    <span class="icon-user"></span>
+                                    <span>{$adv:business}</span>
+                                <p class="grid_6 t-hide m-hide adv-price">
+                                    <span>{$header:price2:static}</span>{$adv:price:readonly} {$adv:currency:readonly}
+                                </p>
+                                </p>
+                            </div>  
+                             <p class="d-hide t-grid_2 m-grid_2 adv-price"><span class="t-hide m-hide">{$header:price2:static}</span>{$adv:price:readonly} {$adv:currency:readonly}</p>
+                            <div class="grid_6 t-grid_3 m-grid_2 fl-right btn_block">
+                                <a class="btn adv_primary2 mt15px {$mobile:device:mobile=block}" href="{$page:url}">
+                                    Buy now
+                                </a>
+                            </div>    
+                        </div>    
+                    </li>
+                    {/advlist}                    
+                </ul>
+                {$content:content11}
+                {$content:content12}
+                <h2>{$header:content2}</h2>
+                {$content:content21}
+                {$content:content22}
+                <h2>{$header:content3}</h2>
+                {$content:content31}
+                {$content:content32}
+            </div>
+
+            <!-- Right box -->
+            <aside id="right" class="grid_3 t-hide m-hide">
+                <div class="aside-box">
+                    <h3>{$header:right3:static}</h3>
+                    {$content:right3:static}
+                </div>
+            </aside>
+
+        </div>
+</div>
+        <!--Footer-->
+        {device:desktop}
+            <div>{$template:_footer}</div>
+        {/device}
+        
+        {device:tablet}
+            <div>{$template:_footertablet}</div>
+        {$template:_footertablet}
+        {/device}
+        
+        {device:mobile}
+            <div>{$template:_footermobile}</div>
+        {/device}
+
+        <!-- SCRIPTS ZONE -->
+    
+        <script src="js/plugin/jquery.cycle2.min.js"></script>
+        <script src="js/scripts.min.js"></script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83332826-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+        <script src="js/system/skeleton.min.js"></script>
+    </body>
+</html>

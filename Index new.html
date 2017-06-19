@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>{$page:title}</title>
+        <meta name="keywords" content="{$meta:keywords}">
+        <meta name="description" content="{$meta:description}">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes"> <!-- open in full-screen, hide URL bar (for IOS)-->
+    <meta name="google-site-verification" content="eZaWS03csuUtzOAYZ8SSqgpcUCR9zIKSHjIYuev3We4" />
+        <!-- Favicons -->
+        <link rel="icon" href="images/favicon.ico">
+        <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
+        <link rel="apple-touch-icon" href="images/apple-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' media="screen">
+        <!-- CSS -->
+        {concatcss}
+        <link href="css/reset.css" rel="stylesheet" media="screen">
+        <link href="css/content.css" rel="stylesheet" media="screen">
+        <link href="css/nav.css" rel="stylesheet" media="screen">
+        <link href="css/style.css" rel="stylesheet" media="screen">
+        <!-- Shopping css
+        <link href="css/store.css" rel="stylesheet" media="screen">
+         -->
+        <!-- Additional css -->
+        <link href="css/skeleton-ui.css" rel="stylesheet" media="screen">
+        <link href="css/animation.css" rel="stylesheet" media="screen">
+        {/concatcss}
+
+        <!-- HTML5shiv and selectivizr.js IE support of HTML5 elements and CSS3 pseudo-classes, attribute selectors -->
+        <!--[if lt IE 9]><script src="js/system/ie-pack.js"></script><![endif]-->
+ 
+ <!--Logout then redirect on proper page-->
+ <script type="text/javascript">
+    $(document).on('click', '.logout', function(e){
+       e.preventDefault();
+       showSpinner();
+       $.post($(e.currentTarget).attr('href'), function(){
+           //put here your url 
+           hideSpinner();
+           window.location.href = 'ads.html';
+       });
+    });
+     <!--Featured area links like search-->
+    $(document).on('click', '#index li', function(e){
+       e.preventDefault();
+       window.location.href = $(this).find('.page-teaser-image').attr('href')+'?country='+$('#searchCountry').val();
+    });
+ </script>
+    </head>
+
+    <body class="{$mobile:device} index">
+
+        {$template:_header-mobile}
+        <!-- Header -->
+            <header>
+                <div class="container">
+                    <div class="grid_1 drop-box-menu">
+                        <div>
+                            <span class="action-btn menu-btn icon-list2 btn"></span>
+                            <nav id="flat-menu" class="drop-menu">
+                                {$menu:flat}
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="grid_4">
+                        {$plugin:joblist:navigation}
+                    </div>
+                    <h1 class="logo grid_3">
+                        <a href="{$website:url}" title="{$page:h1}">
+                            <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}">
+                        </a>
+                    </h1>
+
+                    <!-- Main Menu -->
+                    <!--nav id="main-menu" class="grid_8 mt15px mb20px">{$ menu:main:main_menu}</nav-->
+                    
+                    <!-- Sing up -->
+                    <div class="grid_4 login-box">
+                        {memberonly}
+                            {$header:logout:static}
+                            {$user:name}
+                            <a href="/member-landing-page.html" class="action-btn login-menu-btn icon-user btn"></a>
+                            {$member:logout}
+                        {/memberonly}
+                        <a class="login-btn action-btn {$prepop:action-btnBG-key1:select:static:readonly} {$prepop:action-btnSize-key1:select:static:readonly}" href="{$prepop:action-btnLink-key1:text:static:readonly}">{$prepop:action-btnText-key1:text:static:readonly}</a>
+                        {adminonly}
+                            <span class="icon-cog dialog btn icon inverse tooltip top" title="Click to edit button style" data-class="blue" data-element=".action-button_key" data-width="300"></span>
+                            <div class=" hide settings action-button_key" title="Edit button style">
+                                <label>Enter button text</label>
+                                {$prepop:action-btnText-key1:text:static}
+                                <label class="mt10px">Enter button link</label>
+                                {$prepop:action-btnLink-key1:text:static}
+                                <label class="mt10px">Choose button color</label>
+                                {$prepop:action-btnBG-key1:select:seosamba-color|seotoaster-color|inverse|orange|orange-dark|orange-inverse|red|red-dark|red-inverse|blue|blue-dark|blue-inverse|green|green-dark|green-inverse:static}
+                                <label class="mt10px">Choose button size</label>
+                                {$prepop:action-btnSize-key1:select:larger|large|normal|small:static}
+                            </div>
+                        {/adminonly}
+                        <!--a class="singin-btn " href="#">Sing in</a-->  
+                        <a class="singin-btn action-btn {$prepop:action-btnBG-key2:select:static:readonly} {$prepop:action-btnSize-key2:select:static:readonly}" href="{$prepop:action-btnLink-key2:text:static:readonly}">{$prepop:action-btnText-key2:text:static:readonly}</a>
+                            {adminonly}
+                            <span class="icon-cog dialog btn icon inverse tooltip top" title="Click to edit button style" data-class="blue" data-element=".action-button_key" data-width="300"></span>
+                            <div class="hide settings action-button_key" title="Edit button style">
+                                <label>Enter button text</label>
+                                {$prepop:action-btnText-key2:text:static}
+                                <label class="mt10px">Enter button link</label>
+                                {$prepop:action-btnLink-key2:text:static}
+                                <label class="mt10px">Choose button color</label>
+                                {$prepop:action-btnBG-key2:select:seosamba-color|seotoaster-color|inverse|orange|orange-dark|orange-inverse|red|red-dark|red-inverse|blue|blue-dark|blue-inverse|green|green-dark|green-inverse:static}
+                                <label class="mt10px">Choose button size</label>
+                                {$prepop:action-btnSize-key2:select:larger|large|normal|small:static}
+                            </div>
+                            {/adminonly}
+                    </div>
+                </div>
+            </header>
+            
+        <!-- Container -->
+        <div id="container" class="container">
+            <div class="serach-box grid_8 prefix_2 suffix_2">
+                <span class="title t-hide m-hide">
+                    {$header:search}
+                </span>
+                 {$jsearch:SearchForm}
+            </div>
+            <div class="grid_8 prefix_2 suffix_2 menu-box">
+                {$featuredonly:index}
+            </div> 
+            <div class="grid_12 mb20px t-hide m-hide index-map">
+                {$plugin:joblist:map:company:golden:200:940}
+            </div>
+        </div>
+        <div class="wrap-gray mb20px pt10px pb20px">
+            <div  class="container">
+                <h2 class="grid_12 text-center">{$header:best}</h2>
+                <div class="grid_12 offers">
+                    {$content:best}{$content:best2}{$content:best3}
+                </div>
+            </div>
+        </div>
+        <div  class="container">
+            <!-- Content box -->
+            <div id="content" class="grid_12">
+                {$featuredonly:index2}
+            </div>
+        </div>
+        <div class="wrap-gray gallery mb20px">
+            <div class="container">
+                <div class="grid_12 brands">
+                    <!--{$ galleryonly:brands}-->
+                    <ul class="img_gallery {$mobile:device:mobile=carousel:tablet=carousel}" data-visible="3">
+                    {repeat:name:key}
+                        <li>{$imageonly:gallerykey:145}</li>
+                    {/repeat}    
+                    </ul>
+                </div>
+            </div>    
+        </div>
+        <div class="container mb20px">
+            <div class="grid_12 text-center banners">
+                {device:desktop}{$content:banner:static}{/device}
+                {device:mobile}{$content:banner-mob:static}{/device}
+                {device:tablet}{$content:banner-mob:static}{/device}
+            </div>
+        </div>
+        <div class="wrap t-hide m-hide">
+            <!-- bg img2 
+            {$ imageonly:bg_img2:{$mobile:device:mobile=medium:tablet=large:desktop=1920}}
+            -->
+             <!-- Container -->
+            <div class="container">   
+                <div class="grid_12 mb20px">   
+                    <span class="title-big">
+                        {$header:registr}
+                    </span>
+                    <span class="under-title-big">
+                        {$header:registr2}
+                    </span>                    
+                </div>
+                <div class="grid_4 suffix_8">
+                    {$member:signup} 
+                </div>
+            </div>
+        </div>
+        <!--Footer-->
+        {device:desktop}
+            <div>{$template:_footer}</div>
+        {/device}
+        
+        {device:tablet}
+            <div>{$template:_footertablet}</div>
+        {$template:_footertablet}
+        {/device}
+        
+        {device:mobile}
+            <div>{$template:_footermobile}</div>
+        {/device}
+        
+        <!-- SCRIPTS ZONE -->
+        <script>
+            $(function(){
+                $('.seotoaster-signup p').each(function(){
+                    var placeholder = $(this).find('label').text();
+                    $(this).find('input').attr('placeholder', placeholder);
+                });
+                $('.carousel').data({
+                    'visibletablet' : 3,
+                    'visiblemobile' : 2
+                });
+            });
+        </script>
+        <script src="js/plugin/jquery.cycle2.min.js"></script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83332826-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+        <script src="js/scripts.min.js"></script>
+        <script src="js/system/flexkit.min.js"></script>
+    </body>
+</html>

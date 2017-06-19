@@ -1,0 +1,117 @@
+<div class="d-hide">
+        {$template:_header-mobile}
+        <!-- Header -->
+        {$template:_header}
+        <!-- Container -->
+        <div class="wrapone job">
+         <div class="inner-search-box d-hide">
+            <div class="container">
+                {$template:_jsearchforms}   
+            </div>        
+         </div>
+            <div id="container" class="container">
+                <div class="grid_12 banners text-center mb20px">
+                    {device:desktop}{$content:banner:static}{/device}
+                    {device:mobile}{$content:banner:static}{/device}
+                    {device:tablet}{$content:banner:static}{/device}
+                </div>
+                <!-- Content box -->
+                <div id="content" class="grid_9 left-column">  
+                    <div class="text-center tablet-none_img">
+                        {$directupload:{$job:id}:logo:220:placeholder}
+                    </div> 
+                    <h1 class="grid_12 alpha">
+                        <span class="grid_12 alpha">{$job:name}</span>
+                        <span class="data_job d-hide t-grid_12">{$header:post:static} {$job:updatedat:readonly}</span>
+                    </h1>
+                    <div class="info grid_12 d-hide">
+                        <span class="block contact-info mb20px t-grid_5 m-grid_4"> 
+                            <div class="spoiler-title"><i class="icon-screen icon16"></i> <span>Visit website</span></div>  
+                            <div class="spoiler-body">{$job:site}</div>
+                        </span>  
+                    </div>
+                    <div class="grid_12 d-hide">
+                        <span class="preview_btn t-grid_3 m-grid_3">{$job:previewlink}</span>
+                        <span class="block contact-info t-grid_3 m-grid_3 t-btn_block">
+                        {$job:telephone}
+                        </span>   
+                        <span class="block contact-info t-grid_3 m-grid_3 t-btn_block">
+                        {$job:email}
+                        </span>
+                        <div class="t-grid_3 m-grid_3 t-btn_block">
+                            <a href="#contact-form" id="btn-contact-form" class="btn mb15px blue-btn t-grid_3 m-grid_2">{$header:btn-left3:static}</a>
+                        </div>
+                        <div class="aside-box total grid_7">
+                            <h3>{$header:right2:static}</h3>
+                            {$content:right2:static}
+                        </div>
+                    </div>
+                    {$job:hideemail}
+                    {$job:hidetelephone}  
+                    <address class="job-address font-SlabTallX company-address t-grid_12 m-grid_12 alpha"> 
+                        <span class="h3 block">{$header:job1:static}</span>
+                        <div class="grid_12 alpha">
+                            <ul class="grid_12 t-grid_12 m-grid_6 text-address alpha ">
+                                <li class="t-grid_12">
+                                    <span class="grid_3 t-grid_1 m-grid_2">Company:</span>
+                                    <span class="sel grid_9 t-grid_4 m-grid_2">{$job:business}</span>
+                                </li>
+                                <li class="t-grid_12">
+                                    <span class="grid_3 t-grid_1 m-grid_2">Salary:</span>
+                                    <span class="salary_job sel grid_9 t-grid_4 m-grid_2">{$job:salary}</span>
+                                </li>
+                                <li class="t-grid_12">
+                                    <span class="grid_3 t-grid_1 m-grid_2">City:</span>
+                                    <span class="sel grid_9 t-grid_4 m-grid_2">{$job:city}</span>
+                                </li>
+                                <li class="t-grid_12">
+                                    <span class="grid_3 t-grid_1 m-grid_2">Hours:</span>
+                                    <span class="sel grid_9 t-grid_4 m-grid_2">{$job:hours}</span>
+                                </li>
+                                <li class="t-grid_12">
+                                    <span class="grid_3 t-grid_1 m-grid_2"> Requisition:</span>
+                                    <span class="sel grid_9 t-grid_4 m-grid_2">{$job:requisition}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </address> 
+                    <h3 class="site_h">Description:</h3>
+                    <p class="ov_hid">{$job:description}</p>
+                    <p>{$content:content11}</p>
+                    {$content:content12}
+                    <h2>{$header:content2}</h2>
+                    {$content:content21}
+                    {$content:content22}
+                    <span class="clearfix"></span>
+                    <div class="grid_12">
+                        <div>
+                            <span class="site_h">Relevant experience and abilities:</span>
+                            {$job:ability}
+                        </div>
+                        <div class="t-grid_3 m-grid_4 d-hide">
+                            <a href="#report-form" id="btn-report-form" class="mb15px icon-flag red">{$header:btn-report:static}</a>                        <div class="form-box"><h3 id="report-form"></h3>
+                                {$plugin:joblist:report}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <h3 id="contact-form">Contact now</h3>
+                        {$plugin:joblist:Apply:job}
+                    </div>
+                </div>
+                <div class="grid_12">
+                    <div id="content" class="grid_12"><h4>{$header:related-job:static}</h4>
+                        {$plugin:joblist:related:job:150}
+                        <span class="grid_12 business">
+                            <a href="http://new.umahadex.com/classified-ads.html">All Related</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="grid_12 banners text-center mb20px">
+                
+                    {device:mobile}{$content:banner:static}{/device}
+                    {device:tablet}{$content:banner:static}{/device}
+                </div>
+         </div>
+        </div>
+</div>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    {$template:_head}
+    <body class="{$mobile:device}">
+        {$template:_header-mobile}
+        <!-- Header -->
+        {$template:_header}
+        <!-- Container -->
+        <div class="wrapone job t-hide m-hide">
+            <div id="container" class="container">
+                <div class="grid_12 nav_all t-hide m-hide">
+                    {$plugin:joblist:navigation}
+                </div>
+                <div class="grid_12 banners text-center mb20px">
+                    {device:desktop}{$content:banner:static}{/device}
+                    {device:mobile}{$content:banner:static}{/device}
+                    {device:tablet}{$content:banner:static}{/device}
+                </div>
+                <!-- Content box -->
+                <div id="content" class="grid_9 left-column">  
+                    <h1 class="grid_12 alpha">
+                        <span class="grid_12 alpha">{$job:name}</span>
+                        <span class="grid_7 block category-option alpha t-hide m-hide">{$job:categories:readonly}</span>
+                        <div class="grid_4 link_addto_fav t-hide m-hide">
+                            {$plugin:joblist:wishlist:link}
+                        </div>
+                    </h1>
+                    {$job:hideemail}
+                    {$job:hidetelephone}  
+                    <address class="job-address font-SlabTallX company-address t-grid_12 m-grid_12 alpha"> 
+                        <span class="h3 block">{$header:job1:static}</span>
+                        <div class="grid_12 alpha">
+                            <ul class="grid_12 t-grid_12 m-grid_6 text-address alpha ">
+                                <li class="t-grid_12">
+                                    <span class="grid_3 t-grid_1 m-grid_2">Company:</span>
+                                    <span class="sel grid_9 t-grid_4 m-grid_2">{$job:business}</span>
+                                </li>
+                                <li class="t-grid_12">
+                                    <span class="grid_3 t-grid_1 m-grid_2">Salary:</span>
+                                    <span class="salary_job sel grid_9 t-grid_4 m-grid_2">{$job:salary}</span>
+                                </li>
+                                <li class="t-grid_12">
+                                    <span class="grid_3 t-grid_1 m-grid_2">City:</span>
+                                    <span class="sel grid_9 t-grid_4 m-grid_2">{$job:city}</span>
+                                </li>
+                                <li class="t-grid_12">
+                                    <span class="grid_3 t-grid_1 m-grid_2">Hours:</span>
+                                    <span class="sel grid_9 t-grid_4 m-grid_2">{$job:hours}</span>
+                                </li>
+                                <li class="t-grid_12">
+                                    <span class="grid_3 t-grid_1 m-grid_2"> Requisition:</span>
+                                    <span class="sel grid_9 t-grid_4 m-grid_2">{$job:requisition}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </address> 
+                    <h3 class="site_h">Description:</h3>
+                    <p class="ov_hid">{$job:description}</p>
+                    <p>{$content:content11}</p>
+                    {$content:content12}
+                    <h2>{$header:content2}</h2>
+                    {$content:content21}
+                    {$content:content22}
+                    <span class="clearfix"></span>
+                    <div class="grid_12">
+                        <div>
+                            <span class="site_h">Relevant experience and abilities:</span>
+                            {$job:ability}
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <h3 id="contact-form">Contact now</h3>
+                        {$plugin:joblist:Apply:job}
+                    </div>
+                </div>
+                         
+            <!-- Right box -->
+            <aside id="right" class="grid_3 t-hide m-hide">
+                <aside id="right" class="panel">
+                    <div class="text-center">
+                        {$directupload:{$job:id}:logo:220:placeholder}
+                    </div>  
+                    <div class="info">
+                        <span class="block contact-info mb20px t-grid_3 m-grid_4">
+                            <span class="data_company">{$header:post:static} {$job:updatedat:readonly}</span>
+                            <div class="spoiler-title"><i class="icon-screen icon16"></i> <span>Visit website</span></div>      
+                            <div class="spoiler-body">{$job:site}</div>
+                        </span>  
+                    </div>
+                    <span class="block contact-info t-grid_3 m-grid_2">
+                        {$job:telephone}
+                    </span>   
+                    <span class="block contact-info t-grid_3 m-grid_2">
+                        {$job:email}
+                    </span>
+                    <span class="r-grid_2 m-grid_2">{$job:previewlink}</span>
+                    <div class="t-grid_3 m-grid_4">
+                        <a href="#contact-form" id="btn-contact-form" class="btn mb15px blue-btn t-grid_3 m-grid_2">{$header:btn-left3:static}</a>
+                    </div>
+                </aside>
+                {memberonly}
+                <div class="aside-box">
+                <h3>{$header:right1:static}</h3>  
+            </div>
+                {/memberonly}
+                <div class="aside-box">
+                {$content:right2:static}
+            </div>
+                <div class="aside-box">
+                <h3>{$header:right3}</h3>
+                {$content:right3}
+                <div class="t-grid_3 m-grid_4">
+                    <div class="form-box"><h3 id="report-form"></h3>
+                        {$plugin:joblist:report}
+                    </div>
+                </div>
+            </div>
+                <div class="aside-box">
+                {$content:right3:static}
+            </div>
+            </aside>
+            <div class="grid_12">
+                <div id="content" class="grid_12"><h4>{$header:related-job:static}</h4>
+                    {$plugin:joblist:related:job:150}
+                    <span class="grid_12 business">
+                        <a href="http://new.umahadex.com/classified-ads.html">All Related</a>
+                    </span>
+                </div>
+            </div>
+            <div class="grid_12 banners text-center mb20px">
+                {device:desktop}{$content:banner:static}{/device}
+            </div>
+            </div>
+        </div>
+        <div class="d-hide">
+            {$template:_job-mobile-version}
+        </div>
+        <!-- Footer -->
+          <!-- Footer -->
+        {device:desktop}
+            <div>{$template:_footer}</div>
+        {/device}
+        
+        {device:tablet}
+            <div>{$template:_footertablet}</div>
+        {/device}
+        
+        {device:mobile}
+            <div>{$template:_footermobile}</div>
+        {/device}
+        
+        <!-- SCRIPTS ZONE -->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.spoiler-body').hide();
+                $('.spoiler-title').click(function(){
+            $(this).next().toggle()});
+            });
+        </script>
+        <script>
+            $(function(){
+                $('#btn-contact-form').on('click', function(){
+                    $('#contact-form').closest('.form-box').slideDown();
+                });
+                  $('#btn-report-form').on('click', function(){
+                    $('#report-form').closest('.form-box').slideDown();
+                });
+            });
+        </script>
+        <script src="js/plugin/jquery.carousel.min.js"></script>
+        <script src="js/scripts.min.js"></script>
+        <script src="js/system/skeleton.min.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-83332826-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>

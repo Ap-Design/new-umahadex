@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+     <!--Head-->
+        {$template:_head}
+    <body class="{$mobile:device}">
+
+       {$template:_header-mobile}
+         <!-- Header -->
+            {$template:_header}
+            
+        <!-- Container -->
+        <div class="wrapone">
+        <div id="container" class="container">
+        <h1 class="grid_12">{$page:h1}</h1>
+           <h2 class="small">{$header:content3}</h2>
+            <!-- Content box -->
+            <div id="content" class="grid_12 inner-page">
+                {$content:grid_data}
+                {$content:content11}
+                {$content:content12}
+                
+                {$content:content21}
+                {$content:content22}
+            </div>
+
+        </div>
+        </div>
+        <!--Footer-->
+        {device:desktop}
+            <div>{$template:_footer}</div>
+        {/device}
+        
+        {device:tablet}
+            <div>{$template:_footertablet}</div>
+        {$template:_footertablet}
+        {/device}
+        
+        {device:mobile}
+            <div>{$template:_footermobile}</div>
+        {/device}
+
+        <!-- SCRIPTS ZONE -->
+        <script>
+            $(function(){
+            });
+        </script>
+        <script src="js/scripts.min.js"></script>
+        <script src="js/system/skeleton.min.js"></script>
+    </body>
+</html>

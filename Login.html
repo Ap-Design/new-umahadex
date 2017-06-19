@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<!--Head-->
+{$template:_head}
+
+<body class="{$mobile:device}">
+
+ {$template:_header-mobile}
+ 
+ <!-- Header -->
+ <div>{$template:_header}</div>
+ 
+ {device:desktop}
+ {$template:_logindesktop} 
+ {/device}
+ 
+ {device:tablet}
+ {$template:_logintablet}
+ {/device}
+ 
+ {device:mobile}
+ {$template:_loginmobile}
+ {/device}
+ 
+ 
+ 
+ <!--Footer-->
+ {device:desktop}
+ <div>{$template:_footer}</div>
+ {/device}
+ 
+ {device:tablet}
+ <div>{$template:_footertablet}</div>
+ {/device}
+ 
+ {device:mobile}
+ <div>{$template:_footermobile}</div>
+ {/device}
+ 
+ 
+
+ <!-- SCRIPTS ZONE -->
+ <script>
+    $(function(){
+        
+    });
+</script>
+<script src="js/scripts.min.js"></script>
+<!--script src="js/system/skeleton.min.js"></script-->
+<script src="js/system/flexkit.min.js"></script>
+</body>
+</html>
